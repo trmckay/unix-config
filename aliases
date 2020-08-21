@@ -40,3 +40,5 @@ function alacritheme {
     cat $HOME/.config/alacritty/$1 > $HOME/.config/alacritty/alacritty.yml
     cat $HOME/.config/alacritty/alacritty-base.yml >> $HOME/.config/alacritty/alacritty.yml
 }
+
+alias xinitrc="nvim ~/.xinitrc"

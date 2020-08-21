@@ -18,10 +18,16 @@ rm -rf nerd-fonts
 
 # link each file to home folder
 for FILE in *; do
-    if [ "$FILE" != ".git" ]; then 
+    if [ "$FILE" != "config" ]; then 
         ln -sf $FILE $HOME/.$FILE
     fi 
 done
+
+cd config
+for FILE in *; do
+    ln -sf $FILE $HOME/.config
+done
+cd ..
 
 # install neovim plugins
 pip3 install pynvim

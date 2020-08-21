@@ -4,18 +4,22 @@
 # cannot use home folder variables since this will usually
 # be executed as root
 
-date > /var/log/cron-backup.log
+LOG="/var/log/cron-backup.log"
+TARG1="/home"
+TARG2="/etc"
+PKGLIST="/home/trevor/.packages"
+DEST="/mnt/hdd0/backups/daily"
 
-echo "Backing up to HDD..." >> /var/log/cron-backup.log
-rsync -a --quiet --delete /home /mnt/hdd0/backups >> /var/log/cron-backup.log
-rsync -a --quiet --delete /etc /mnt/hdd0/backups >> /var/log/cron-backup.log
-cp -r /home/trevor/.packages /mnt/hdd0/backups/packages >> /var/log/cron-backup.log
+date > $LOG
 
-if mount | grep /mnt/usb-s0 > /dev/null; then
-    echo "Backing up to USB media..." >> /var/log/cron-backup.log
-    rsync -a --quiet --delete /home /mnt/usb-s0/backups >> /var/log/cron-backup.log
-    rsync -a --quiet --delete /etc /mnt/usb-s0/backups >> /var/log/cron-backup.log
-    cp -r /home/trevor/.packages /mnt/usb-s0/backups/packages >> /var/log/cron-backup.log
-fi
+echo "Rotating backups..." >> $LOG
+rsync -a --quiet --delete $DEST/* $DEST.old >> $LOG
 
-echo "Backup complete!" >> /var/log/cron-backup.log
+echo "Syncing $TARG1..." >> $LOG
+rsync -a --quiet --delete /home $DEST >> $LOG
+echo "Syncing $TARG2..." >> $LOG
+rsync -a --quiet --delete /etc $DEST >> $LOG
+echo "Copying package list" >> $LOG
+cp -r /home/trevor/.packages $DEST/packages >> $LOG
+
+echo "Backup complete!" >> $LOG
