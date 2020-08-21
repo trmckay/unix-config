@@ -1,0 +1,42 @@
+#!usr/bin/zsh
+
+alias edit-aliases="vim ~/.aliases; refresh"
+
+alias edit-path="vim ~/.path; refresh"
+
+function tgz {
+    tar cf - $2 | pigz > $1
+}
+
+function add-alias {
+    echo "\nalias $1=\"$2\"" >> $HOME/.aliases
+    echo "\"$2\" aliased to $1"
+}
+
+alias vi="nvim"
+alias vim="nvim"
+
+alias lock="i3lock -i Pictures/wallpapers/mt.png"
+
+alias refresh="source ~/.zshrc; echo \"sourced ~/.zshrc\""
+
+alias due="task due:today"
+
+alias vimrc="vim ~/.config/nvim/init.vim"
+
+alias i3cfg="vim ~/.config/i3/config"
+
+alias ts="task sync"
+
+alias untar="tar xf"
+
+alias zshrc="nvim ~/.zshrc; source ~/.zshrc"
+
+alias svim="sudo -E nvim"
+
+alias pls="sudo"
+
+function alacritheme {
+    cat $HOME/.config/alacritty/$1 > $HOME/.config/alacritty/alacritty.yml
+    cat $HOME/.config/alacritty/alacritty-base.yml >> $HOME/.config/alacritty/alacritty.yml
+}
