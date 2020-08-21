@@ -1,0 +1,55 @@
+colors:
+  # Default colors
+  primary:
+    background: '0x1e1e1e'
+    foreground: '0xfdeec3'
+
+  # Normal colors
+  normal:
+    black:   '0x1e1e1e'
+    red:     '0xc14a33'
+    green:   '0x3aaf5a'
+    yellow:  '0xfadcad'
+    blue:    '0x2683ad'
+    magenta: '0xbd5382'
+    cyan:    '0x47aeab'
+    white:   '0x999988'
+
+  # Bright colors
+  bright:
+    black:   '0x9a9a9a'
+    red:     '0xce3e38'
+    green:   '0x2cc665'
+    yellow:  '0xeccc8c'
+    blue:    '0x5787be'
+    magenta: '0xe07090'
+    cyan:    '0x43afa6'
+    white:   '0xe6d4a3'
+
+key_bindings:
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+
+window:
+  padding:
+    x: 10
+    y: 10
+
+font:
+  normal:
+    family: Meslo LG S DZ Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: Meslo LG S DZ Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: Meslo LG S DZ Nerd Font Mono
+    style: Italic
+
+  bold_italic:
+    family: Meslo LG S DZ Nerd Font Mono
+    style: Bold Italic
+
+  size: 12.0
+  draw_bold_text_with_bright_colors: false
