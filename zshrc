@@ -19,6 +19,3 @@ prompt pure
 
 # syntax-highlighting
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# vi mode
-source ~/.zsh/vi-mode.zsh/vi-mode.zsh

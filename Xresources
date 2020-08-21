@@ -48,3 +48,4 @@ URxvt.font: xft:MesloLGS Nerd Font:size=13:antialias=true;Meslo LG S DZ for Powe
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
+URxvt*cursorUnderline:                true
