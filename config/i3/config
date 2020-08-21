@@ -10,9 +10,6 @@
 
 set $terminal alacritty
 
-set $primary HDMI-0
-set $secondary DP-1 
-
 # gaps
 gaps inner 10
 default_border none
@@ -145,44 +142,6 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-
-# set outputs
-workspace $ws1 output $primary
-workspace $ws2 output $primary
-workspace $ws3 output $primary
-workspace $ws4 output $primary
-workspace $ws5 output $primary
-workspace $ws6 output $primary
-workspace $ws7 output $primary
-workspace $ws8 output $primary
-workspace $ws9 output $primary
-
-set $wsa "a"
-set $wsb "b"
-set $wsc "c"
-set $wsd "d"
-
-mode "secondary" {
-        bindsym 1 workspace $wsa
-        bindsym 2 workspace $wsb
-        bindsym 3 workspace $wsc
-        bindsym 4 workspace $wsa
-
-        bindsym Shift+1 move container to workspace $wsa
-        bindsym Shift+2 move container to workspace $wsb
-        bindsym Shift+3 move container to workspace $wsc
-        bindsym Shift+4 move container to workspace $wsd
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+Tab mode "secondary"
-
-workspace $wsa output $secondary
-workspace $wsb output $secondary
-workspace $wsc output $secondary
-workspace $wsd output $secondary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
