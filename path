@@ -7,6 +7,3 @@ export PATH=$PATH:\
 /home/linuxbrew/.linuxbrew/bin:\
 $HOME/.local/bin:\
 $HOME/tools/llvm-project/build/bin:\
-home/trevor/.cargo/bin
-
-export LD_LIBRARY_PATH="$HOME/tools/llvm-project/build/lib:$LD_LIBRARY_PATH"
