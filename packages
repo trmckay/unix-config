@@ -2,6 +2,7 @@ adobe-source-sans-pro-fonts
 adobe-source-serif-pro-fonts
 alacritty
 alsa-utils
+amd-ucode
 arandr
 arc-icon-theme
 autoconf
@@ -13,6 +14,8 @@ bison
 calibre
 cava
 ccls
+cpupower
+cpupower-gui
 cronie
 dhcpcd
 discord
@@ -28,9 +31,9 @@ gparted
 grub
 gscreenshot
 gtk-chtheme
+gvfs
 htop
 i3blocks
-lib32-readline
 libpng12
 linux-zen
 lscolors-git
@@ -78,6 +81,8 @@ tldr
 tree
 ttf-font-awesome
 ttf-meslo
+tungsten
+ufw
 unrar
 unzip
 valgrind
@@ -85,6 +90,7 @@ visual-studio-code-bin
 vit
 vlc
 wget
+wine
 xautolock
 xdg-user-dirs
 xf86-video-vesa
@@ -124,5 +130,7 @@ xorg-xwud
 xss-lock
 yay
 ytop
+zathura
+zenpower-dkms
 zip
 zoom

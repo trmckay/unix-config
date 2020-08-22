@@ -42,3 +42,9 @@ function alacritheme {
 }
 
 alias xinitrc="nvim ~/.xinitrc"
+
+alias xresources="nvim ~/.Xresources; xrdb ~/.Xresources"
+
+alias mc="minecraftd"
+
+alias cpufreq="watch grep "cpu MHz" /proc/cpuinfo"

@@ -1,45 +1,28 @@
-! special
-*.foreground:   #fdeec3
-*.background:   #1e1e1e
-*.cursorColor:  #fdeec3
-
-! black
-*.color0:       #1e1e1e
-*.color8:       #4a4a4a
-
-! red
-*.color1:       #c14a33
-*.color9:       #ce3e38
-
-! green
-*.color2:       #3aaf5a
-*.color10:      #2cc665
-
-! yellow
-*.color3:       #fadcad
-*.color11:      #eccc8c
-
-! blue
-*.color4:       #2683ad
-*.color12:      #5787be
-
-! magenta
-*.color5:       #bd5382
-*.color13:      #e07090
-
-! cyan
-*.color6:       #47aeab
-*.color14:      #43afa6
-
-! white
-*.color7:       #999988
-*.color15:      #e6d4a3
+*foreground: #d8caac
+*background: #252d33
+*cursorColor:  #d8caac
+*color0: #252d33
+*color8: #6b828f
+*color1: #e68183
+*color9: #e68183
+*color2: #a7c080
+*color10: #a7c080
+*color3: #d9bb80
+*color11: #d9bb80
+*color4: #89beba
+*color12: #89beba
+*color5: #d3a0bc
+*color13: #d3a0bc
+*color6: #87c095
+*color14: #87c095
+*color7: #d8caac
+*color15: #d8caac
 
 Xft.dpi: 96
 Xft.antialias: true
 Xft.rgba: rgb
 Xcursor.size:  0
-URxvt.internalBorder: 10 
+URxvt.internalBorder: 10
 
 XTerm*selectToClipboard: true
 

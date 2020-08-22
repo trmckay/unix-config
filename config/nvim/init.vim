@@ -23,7 +23,6 @@ set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-set cmdheight=2
 syntax on
 
 call plug#begin()
@@ -38,13 +37,23 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/bin/fzf'
+Plug 'sainnhe/forest-night'
 call plug#end()
 
-" highlight SignColumn ctermbg=0 guibg=#0e0f10
 highlight clear SignColumn
 
+" colorscheme
+set termguicolors
+let g:forest_night_enable_italic = 1
+let g:forest_night_disable_italic_comment = 1
+colorscheme forest-night
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "forest_night"
 let mapleader = "\<Space>"
 
 " Shortcuts for quitting
@@ -69,6 +78,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " Remove trailing whitespace
 nnoremap <leader>c <cmd>%s/\s\+$//e<cr>
+
+" colorizer
+lua require'colorizer'.setup()
 
 "coc-nvim"
 " trigger with tab
@@ -107,10 +119,13 @@ nmap <leader>rn <Plug>(coc-rename)
 " let g:NERDTreeGitStatusShowClean = 1
 
 " CHADTree
-nnoremap <leader>t <cmd>CHADopen<cr>
-lua vim.api.nvim_set_var("chadtree_ignores", { name = {".*", ".git"} })
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CHADopen
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == "chadtree") | q | endif
+" nnoremap <leader>t <cmd>CHADopen<cr>
+" lua vim.api.nvim_set_var("chadtree_ignores", { name = {".*", ".git"} })
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CHADopen
+" autocmd BufEnter * if (winnr("$") == 1 && &filetype == "chadtree") | q | endif
+
+" CoC-explorer
+nnoremap <leader>e <cmd>CocCommand explorer<cr>
 
 " Fuzzy finder
 nnoremap <leader>s <cmd>FZF<cr>
@@ -127,18 +142,14 @@ let g:neoformat_enabled_c = ['clangformat']
 nnoremap <leader>f <cmd>Neoformat<cr>
 
 " snippets
-let g:UltiSnipsExpandTrigger='<c-Space>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 " vimtex
 let g:tex_flavor  = 'latex'
 let g:tex_conceal = ''
 let g:vimtex_fold_manual = 1
 let g:vimtex_latexmk_continuous = 1
-let g:vimtex_compiler_progname = 'pdflatex'
+let g:vimtex_compiler_progname = 'latexmk'
 let g:vimtex_view_method = 'mupdf'
-
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme = "ayu_mirage"
