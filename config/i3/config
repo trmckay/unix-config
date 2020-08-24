@@ -11,14 +11,19 @@
 set $terminal alacritty
 
 set $primary HDMI-0
-set $secondary DP-1 
+set $secondary DP-3
 
 # gaps
 gaps inner 10
+gaps outer 15
+
+# borders
 default_border none
 new_window none
 new_float none
 hide_edge_borders both
+
+# font
 font Meslo LG S
 font pango: Meslo LG S 10
 
@@ -43,13 +48,17 @@ bindsym $mod+p exec --no-startup-id "$terminal --title pulsemixer-popup -e pulse
 for_window [title="pulsemixer-popup"] floating enable
 for_window [title="pulsemixer-popup"] position center
 
+# taskwarrior popup
+bindsym $mod+t exec --no-startup-id "$terminal --title task-popup -e nvim -c TW"
+for_window [title="task-popup"] floating enable
+for_window [title="task-popup"] position center
+
 # ranger popup
 bindsym $mod+e exec "$terminal --title ranger-popup -e ranger"
 for_window [title="ranger-popup"] floating enable
 for_window [title="ranger-popup"] position center
 
-# htop popup
-bindsym $mod+t exec "$terminal --title htop-popup -e htop"
+bindsym $mod+i exec "$terminal --title htop-popup -e htop"
 for_window [title="htop-popup"] floating enable
 for_window [title="htop-popup"] position center
 
@@ -103,14 +112,10 @@ bindsym $mod+l focus right
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-workspace_auto_back_and_forth yes
-
 # toggle tiling / floating
 bindsym $mod+shift+f floating toggle
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-
+# workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"

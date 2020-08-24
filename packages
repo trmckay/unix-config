@@ -15,7 +15,6 @@ calibre
 cava
 ccls
 cpupower
-cpupower-gui
 cronie
 dhcpcd
 discord
@@ -35,6 +34,7 @@ gvfs
 htop
 i3blocks
 libpng12
+libreoffice-still
 linux-zen
 lscolors-git
 lxappearance
@@ -86,6 +86,7 @@ ufw
 unrar
 unzip
 valgrind
+virtualbox
 visual-studio-code-bin
 vit
 vlc

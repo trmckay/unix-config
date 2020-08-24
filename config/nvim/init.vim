@@ -41,6 +41,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/bin/fzf'
 Plug 'sainnhe/forest-night'
+Plug 'xarthurx/taskwarrior.vim'
 call plug#end()
 
 highlight clear SignColumn
@@ -76,8 +77,8 @@ nnoremap <leader>v <C-w>v
 " Exit terminal
 tnoremap <Esc> <C-\><C-n>
 
-" Remove trailing whitespace
-nnoremap <leader>c <cmd>%s/\s\+$//e<cr>
+" Remove trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
 
 " colorizer
 lua require'colorizer'.setup()

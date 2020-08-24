@@ -1,0 +1,4 @@
+0 10 * * * /home/trevor/scripts/update-dots.sh
+0 10 * * * /home/trevor/scripts/update-scripts.sh
+0 10 * * SUN rm -rf /home/trevor/.cache
+*/30 * * * * task sync 

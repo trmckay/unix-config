@@ -1,8 +1,8 @@
 #!usr/bin/zsh
 
-alias edit-aliases="vim ~/.aliases; refresh"
+alias edit-aliases="nvim ~/.aliases; refresh"
 
-alias edit-path="vim ~/.path; refresh"
+alias edit-path="nvim ~/.path; refresh"
 
 function tgz {
     tar cf - $2 | pigz > $1
@@ -47,4 +47,10 @@ alias xresources="nvim ~/.Xresources; xrdb ~/.Xresources"
 
 alias mc="minecraftd"
 
-alias cpufreq="watch grep "cpu MHz" /proc/cpuinfo"
+alias cpufreq="watch grep \\\"cpu MHz\\\" /proc/cpuinfo"
+
+alias vimplug="nvim -c PlugInstall -c UpdateRemotePlugins -c qa!"
+
+alias vt="nvim -c TW"
+
+alias netrst="sudo systemctl restart systemd-networkd.service; sleep 2; sudo systemctl restart openvpn-client@surfshark-la-udp.service"
