@@ -10,6 +10,7 @@ plugins=(git colored-man-pages taskwarrior z)
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 ZSH_THEME=""
+eval $(thefuck --alias)
 
 # pure prompt
 autoload -U promptinit; promptinit
