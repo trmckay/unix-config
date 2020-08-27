@@ -1,0 +1,23 @@
+{
+  "border": "none",
+  "floating": "auto_off",
+  "layout": "splith",
+  "percent": null,
+  "type": "floating_con",
+  "nodes": [
+    {
+      "border": "none",
+      "current_border_width": 0,
+      "floating": "user_on",
+      "fullscreen_mode": 1,
+      "name": "Arrival.mkv - mpv",
+      "percent": 1,
+      "swallows": [
+        {
+          "class": "^mpv$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}
