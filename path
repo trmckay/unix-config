@@ -7,3 +7,4 @@ export PATH=$PATH:\
 /home/linuxbrew/.linuxbrew/bin:\
 $HOME/.local/bin:\
 $HOME/tools/llvm-project/build/bin:\
+$HOME/scripts

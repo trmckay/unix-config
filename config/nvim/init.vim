@@ -58,7 +58,8 @@ let g:airline_theme = "forest_night"
 let mapleader = "\<Space>"
 
 " Shortcuts for quitting
-nnoremap <leader>q <cmd>qa!<cr>
+nnoremap <leader>Q <cmd>qa!<cr>
+nnoremap <leader>q <cmd>x<cr>
 
 cnoreabbrev W w
 cnoreabbrev Wq wq
@@ -153,4 +154,11 @@ let g:tex_conceal = ''
 let g:vimtex_fold_manual = 1
 let g:vimtex_latexmk_continuous = 1
 let g:vimtex_compiler_progname = 'latexmk'
-let g:vimtex_view_method = 'mupdf'
+let g:vimtex_view_method = 'zathura'
+nnoremap <leader>p <cmd>VimtexCompile<cr>
+
+" remap arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

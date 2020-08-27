@@ -4,5 +4,5 @@ xrandr --output DP-3 --mode 1920x1080 --rate 75 --pos 0x0 --rotate left --output
 picom -b -c &
 nitrogen --restore &
 xrdb ~/.Xresources
-xautolock -time 5 -locker "i3lock -i /home/trevor/Pictures/wallpapers/mt.png" &
+xautolock -time 15 -corners ---- -locker "i3lock -i /home/trevor/pictures/wallpapers/mt.png" &
 exec "i3"

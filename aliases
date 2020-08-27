@@ -11,6 +11,7 @@ function tgz {
 function add-alias {
     echo "\nalias $1=\"$2\"" >> $HOME/.aliases
     echo "\"$2\" aliased to $1"
+    source ~/.zshrc
 }
 
 alias vi="nvim"
@@ -53,4 +54,10 @@ alias vimplug="nvim -c PlugInstall -c UpdateRemotePlugins -c qa!"
 
 alias vt="nvim -c TW"
 
-alias netrst="sudo systemctl restart systemd-networkd.service; sleep 2; sudo systemctl restart openvpn-client@surfshark-la-udp.service"
+alias vpnrst="sudo systemctl restart openvpn-client@surfshark-la-udp.service"
+
+alias wc="webcam-toggle.sh"
+
+alias gparted="sudo -E /usr/bin/gparted"
+
+alias wa="tungsten"

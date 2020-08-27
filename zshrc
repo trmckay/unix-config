@@ -13,10 +13,13 @@ ZSH_THEME=""
 eval $(thefuck --alias)
 
 # pure prompt
-autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color cyan
-PURE_PROMPT_SYMBOL="$"
-prompt pure
+# autoload -U promptinit; promptinit
+# zstyle :prompt:pure:path color cyan
+# PURE_PROMPT_SYMBOL="$"
+# prompt pure
+
+# starship prompt
+eval "$(starship init zsh)"
 
 # syntax-highlighting
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

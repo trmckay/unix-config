@@ -43,10 +43,19 @@ bindsym $mod+w exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+s exec spotify
 
+# list of apps that should default to floating
+for_window [class="feh" instance="feh"] floating enable
+for_window [class="mpv"] floating enable
+
 # pulsemixer popup
 bindsym $mod+p exec --no-startup-id "$terminal --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable
 for_window [title="pulsemixer-popup"] position center
+
+# pulsemixer popup
+bindsym $mod+n exec --no-startup-id "$terminal --title nmtui-popup -e nmtui"
+for_window [title="nmtui-popup"] floating enable
+for_window [title="nmtui-popup"] position center
 
 # taskwarrior popup
 bindsym $mod+t exec --no-startup-id "$terminal --title task-popup -e nvim -c TW"
