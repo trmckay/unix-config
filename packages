@@ -9,11 +9,13 @@ arc-icon-theme
 audiofile
 autoconf
 automake
+awesome
 base
 bash-language-server
 bear
 bison
 bluez-utils
+bspwm
 calcurse
 calibre
 ccls
@@ -26,6 +28,7 @@ flex
 fzf
 gcc8
 gimp
+giph
 gparted
 grub
 gscreenshot

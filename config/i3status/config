@@ -36,7 +36,7 @@ ethernet _first_ {
 }
 
 wireless wlp10s0f3u2 {
-        format_up = " WI-FI: %quality - %essid - %bitrate - %ip "
+        format_up = " WI-FI: %quality - %ip "
         format_down = " WI-FI: DISCONNECTED "
 }
 

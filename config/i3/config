@@ -76,11 +76,6 @@ bindsym $mod+c exec --no-startup-id "gscreenshot"
 for_window [title="gscreenshot"] floating enable
 for_window [title="gscreenshot"] position center
 
-# quick terminal
-bindsym $mod+x exec "$terminal --title floating-terminal -e zsh"
-for_window [title="floating-terminal"] floating enable
-for_window [title="floating-terminal"] position center
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -96,6 +91,10 @@ bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+q kill
+
+# show scratchpad
+bindsym $mod+x scratchpad show
+bindsym $mod+Shift+x move scratchpad
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id "rofi -show drun"
@@ -204,34 +203,19 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
 "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# resize window
+bindsym $mod+Down    resize shrink height 10 px or 10 ppt
+bindsym $mod+Up      resize grow   height 10 px or 10 ppt
+bindsym $mod+Left    resize shrink width  10 px or 10 ppt
+bindsym $mod+Right   resize grow   width  10 px or 10 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-# startup, load second monitor layout
+# STARTUP
+# load layout
 exec --no-startup-id /home/trevor/.i3/load_layout.sh
+# scratchpad terminal
+exec "$terminal --title floating-terminal -e zsh"
+for_window [title="floating-terminal"] move scratchad
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
