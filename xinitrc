@@ -19,7 +19,7 @@ xautolock -time 15 -corners ---- -locker "i3lock -i /home/trevor/pictures/wallpa
 case $session in
     i3|i3wm           ) exec i3;;
     awesome           ) exec awesome;;
-    bspwm             ) exec bspwm
-    dwm               ) exec dwm
+    bspwm             ) exec bspwm;;
+    dwm               ) exec dwm;;
     *                 ) exec $1;;
 esac

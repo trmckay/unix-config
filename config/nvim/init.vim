@@ -46,6 +46,8 @@ call plug#end()
 
 highlight clear SignColumn
 
+au BufRead /tmp/mutt-* set tw=72
+
 " colorscheme
 set termguicolors
 let g:forest_night_enable_italic = 1
@@ -156,9 +158,3 @@ let g:vimtex_latexmk_continuous = 1
 let g:vimtex_compiler_progname = 'latexmk'
 let g:vimtex_view_method = 'zathura'
 nnoremap <leader>p <cmd>VimtexCompile<cr>
-
-" remap arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>

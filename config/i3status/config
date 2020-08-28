@@ -5,12 +5,13 @@ general {
 
 order += "read_file backup"
 order += "disk /"
+order += "disk /mnt/ssd0"
 order += "disk /mnt/hdd0"
 order += "disk /mnt/hdd1"
-order += "path_exists VPN"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
+order += "path_exists VPN"
 order += "wireless wlp10s0f3u2"
 order += "tztime local"
 
@@ -36,7 +37,7 @@ ethernet _first_ {
 }
 
 wireless wlp10s0f3u2 {
-        format_up = " WI-FI: %quality - %ip "
+        format_up = " WI-FI:%quality - %ip "
         format_down = " WI-FI: DISCONNECTED "
 }
 
@@ -57,7 +58,11 @@ memory {
 }
 
 disk "/" {
-        format = " SDD: %percentage_used - %used/%total "
+        format = " MAIN: %percentage_used - %used/%total "
+}
+
+disk "/mnt/ssd0" {
+        format = " SSD0: %percentage_used - %used/%total "
 }
 
 disk "/mnt/hdd0" {

@@ -5,6 +5,6 @@ case $NUM in
     "1") xinit i3;;
     "2") xinit awesome;;
     "3") xinit bspwm;;
-    "4") xinit dwm
+    "4") xinit dwm;;
     *) echo "staying in tty";;
 esac
