@@ -1,6 +1,8 @@
-echo "start environment:"
-echo "0) cancel    1) i3    2) awesome    3) bspwm    4) dwm"
-read -n1 NUM
+echo "0) none    1) i3    2) awesome    3) bspwm    4) dwm"
+echo -n "start environment: "
+
+read -k NUM
+echo ""
 case $NUM in
     "1") xinit i3;;
     "2") xinit awesome;;

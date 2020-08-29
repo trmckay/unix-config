@@ -16,7 +16,6 @@ bear
 bison
 bluez-utils
 bspwm
-calcurse
 ccls
 cpupower
 cronie
@@ -36,6 +35,7 @@ gscreenshot
 gtk-chtheme
 htop
 i3blocks
+i3ipc-python-git
 iw
 legendary
 lib32-gamemode
@@ -55,7 +55,6 @@ ncdu
 ncmpc
 ncurses5-compat-libs
 neofetch
-neomutt
 neovim
 nvidia-dkms
 nvtop
@@ -67,6 +66,7 @@ partclone
 picom
 pigz
 pkgconf
+protontricks
 pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
@@ -79,6 +79,7 @@ rsync
 rtl88x2bu-cilynx-dkms-git
 rtl88x2bu-dkms-git
 rust
+schedtoold
 siji-git
 spotify
 spotify-tui
@@ -105,12 +106,12 @@ ttf-meslo
 tungsten
 ufw
 unrar
-urlview
 valgrind
 virtualbox
 vlc
 vscodium-bin
 wget
+wimlib
 xautolock
 xdg-user-dirs
 xf86-video-vesa

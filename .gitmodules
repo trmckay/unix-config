@@ -1,0 +1,3 @@
+[submodule "i3/quickterm"]
+	path = i3/quickterm
+	url = git@github.com:lbonn/i3-quickterm.git
