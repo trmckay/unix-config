@@ -1,6 +1,5 @@
 adobe-source-sans-pro-fonts
 adobe-source-serif-pro-fonts
-akregator
 alacritty
 alsa-utils
 amd-ucode
@@ -16,7 +15,6 @@ bear
 bison
 bluez-utils
 bspwm
-calcurse
 calibre
 ccls
 cpupower
@@ -36,9 +34,11 @@ gscreenshot
 gtk-chtheme
 htop
 i3blocks
+i3ipc-python-git
 iw
 lib32-readline
-lib32-vkd3d
+lib32-vulkan-icd-loader
+libgit2
 libpng12
 libreoffice-still
 linux-zen
@@ -48,12 +48,12 @@ man-pages
 matcha-gtk-theme
 mips64-elf-binutils
 mpv
+msmtp
 mupdf
 ncdu
 ncmpc
 ncurses5-compat-libs
 neofetch
-neomutt
 neovim
 nvidia-dkms
 nvtop
@@ -63,6 +63,7 @@ openvpn
 p7zip
 papirus-icon-theme
 partclone
+pfetch-git
 picom
 pigz
 pkgconf
@@ -75,7 +76,6 @@ rclone
 rofi
 rsstail
 rsync
-rtl88x2bu-cilynx-dkms-git
 rtl88x2bu-dkms-git
 rust
 siji-git
@@ -97,6 +97,7 @@ texlive-science
 thefuck
 thunderbird
 tldr
+transmission-gtk
 tree
 ttf-font-awesome
 ttf-meslo
@@ -106,13 +107,11 @@ unrar
 unzip
 valgrind
 virtualbox
-vkd3d
 vlc
 vscodium-bin
 wget
 xautolock
 xdg-user-dirs
-xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
 xorg-font-util

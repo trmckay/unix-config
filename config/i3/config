@@ -94,7 +94,6 @@ bindsym $mod+q kill
 
 # drop down shells
 bindsym $mod+x exec "/home/trevor/dotfiles/i3/quickterm/i3-quickterm shell"
-bindsym $mod+z exec "/home/trevor/dotfiles/i3/quickterm/i3-quickterm wa"
 
 bindsym $mod+backspace exec "i3lock -i pictures/wallpapers/mt.png"
 
