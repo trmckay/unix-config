@@ -54,8 +54,8 @@ bindsym $mod+n exec --no-startup-id "$terminal --title nmtui-popup -e nmtui"
 for_window [title="nmtui-popup"] floating enable, resize set 1000 1000, move position 0 0
 
 # taskwarrior popup
-bindsym $mod+t exec --no-startup-id "$terminal --title task-popup -e nvim -c TW"
-for_window [title="task-popup"] floating enable, resize set 1500 1200, move position 0 0
+bindsym $mod+t exec --no-startup-id "$terminal --title task-popup -e vit"
+for_window [title="task-popup"] floating enable, resize set 1800 1200, move position 0 0
 
 # ranger popup
 bindsym $mod+e exec "$terminal --title ranger-popup -e ranger"
@@ -161,22 +161,20 @@ bindsym $mod+Up      resize grow   height 10 px or 10 ppt
 bindsym $mod+Left    resize shrink width  10 px or 10 ppt
 bindsym $mod+Right   resize grow   width  10 px or 10 ppt
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, ijf available)
-bar {
-    colors {
-        background #101010
-        statusline #ffffff
-        separator #666666
+# bar {
+#     colors {
+#         background #101010
+#         statusline #ffffff
+#         separator #666666
 
-        focused_workspace  #252525 #252525 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
-    }
+#         focused_workspace  #252525 #252525 #ffffff
+#         active_workspace   #333333 #5f676a #ffffff
+#         inactive_workspace #333333 #222222 #888888
+#         urgent_workspace   #2f343a #900000 #ffffff
+#         binding_mode       #2f343a #900000 #ffffff
+#     }
 
-    position top
-    workspace_buttons   yes
-    status_command      i3status
-}
+#     position top
+#     workspace_buttons   yes
+#     status_command      /home/trevor/.config/polybar/launch.sh
+# }

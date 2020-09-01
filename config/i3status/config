@@ -3,6 +3,7 @@ general {
         interval = 1
 }
 
+order += "disk /mnt/hdd"
 order += "disk /"
 order += "cpu_usage"
 order += "memory"
@@ -22,8 +23,8 @@ wireless wlp5s0 {
 battery 0 {
         format = " %status: %percentage - %remaining "
         format_down = "NONE"
-        status_chr = "CHR"
-        status_bat = "BAT"
+        status_chr = "CHARGING"
+        status_bat = "DISCHARGING"
         status_unk = "???"
         status_full = "FULL"
         path = "/sys/class/power_supply/BAT%d/uevent"
