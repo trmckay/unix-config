@@ -1,44 +1,33 @@
 general {
         colors = false
-        interval = 2
+        interval = 1
 }
 
-order += "read_file backup"
 order += "disk /"
-order += "disk /mnt/ssd0"
-order += "disk /mnt/hdd0"
-order += "disk /mnt/hdd1"
 order += "cpu_usage"
-order += "cpu_temperature 0"
 order += "memory"
-order += "path_exists VPN"
-order += "wireless wlp10s0f3u2"
+order += "wireless wlp5s0"
+order += "battery 0"
 order += "tztime local"
 
-read_file backup {
-        format = " %content "
-        path = "/var/log/backup-status"
-}
-
 cpu_usage {
-        format= " CPU: %usage -"
-        separator = false
+        format= " CPU: %usage "
 }
 
-cpu_temperature 0 {
-        format = "%degrees °C "
-        path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input"
-}
-
-ethernet _first_ {
-        format_up = " ETH: %ip "
-        format_down = ""
-        separator = false
-}
-
-wireless wlp10s0f3u2 {
-        format_up = " WI-FI:%quality - %ip "
+wireless wlp5s0 {
+        format_up = " WI-FI: %essid - %quality - %ip "
         format_down = " WI-FI: DISCONNECTED "
+}
+
+battery 0 {
+        format = " %status: %percentage - %remaining "
+        format_down = "NONE"
+        status_chr = "CHR"
+        status_bat = "BAT"
+        status_unk = "???"
+        status_full = "FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
 }
 
 path_exists VPN {
@@ -58,17 +47,9 @@ memory {
 }
 
 disk "/" {
-        format = " MAIN: %percentage_used - %used/%total "
+        format = " SSD: %percentage_used - %used / %total "
 }
 
-disk "/mnt/ssd0" {
-        format = " SSD0: %percentage_used - %used/%total "
-}
-
-disk "/mnt/hdd0" {
-        format = " HDD0: %percentage_used - %used/%total "
-}
-
-disk "/mnt/hdd1" {
-        format = " HDD1: %percentage_used - %used/%total "
+disk "/mnt/hdd" {
+        format = " HDD: %percentage_used - %used / %total "
 }

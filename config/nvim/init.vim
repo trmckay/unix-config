@@ -37,7 +37,7 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'norcalli/nvim-colorizer.lua'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/bin/fzf'
 Plug 'sainnhe/forest-night'
@@ -46,17 +46,15 @@ call plug#end()
 
 highlight clear SignColumn
 
-au BufRead /tmp/mutt-* set tw=72
-
 " colorscheme
-set termguicolors
-let g:forest_night_enable_italic = 1
-let g:forest_night_disable_italic_comment = 1
-colorscheme forest-night
+" set termguicolors
+" let g:forest_night_enable_italic = 1
+" let g:forest_night_disable_italic_comment = 1
+" colorscheme forest-night
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "forest_night"
+let g:airline_theme="base16"
 let mapleader = "\<Space>"
 
 " Shortcuts for quitting
@@ -82,9 +80,6 @@ tnoremap <Esc> <C-\><C-n>
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
-
-" colorizer
-lua require'colorizer'.setup()
 
 "coc-nvim"
 " trigger with tab

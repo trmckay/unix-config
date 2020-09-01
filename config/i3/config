@@ -10,25 +10,17 @@
 
 set $terminal alacritty
 
-set $primary HDMI-0
-set $secondary DP-3
-
 # gaps
-gaps inner 10
-gaps outer 15
-
-# borders
-default_border none
-new_window none
-new_float none
-hide_edge_borders both
+gaps inner 5
+gaps outer 10
+new_window 1pixel
 
 # font
 font Meslo LG S
 font pango: Meslo LG S 10
 
 # colors
-client.focused          #3aaf5a #3aaf5a #3aaf5a #3aaf5a   #3aaf5a
+client.focused          #7cafc2 #7cafc2 #7cafc2 #7cafc2   #7cafc2
 client.focused_inactive #1e1e1e #1e1e1e #ffffff #1e1e1e   #1e1e1e
 client.unfocused        #1e1e1e #1e1e1e #888888 #292d2e   #1e1e1e
 client.urgent           #2f343a #006060 #ffffff #006060   #006060
@@ -43,38 +35,35 @@ bindsym $mod+w exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+s exec spotify
 
+# rules for floating
+floating_maximum_size 3840 x 2160
+
 # list of apps that should default to floating
 for_window [class="feh" instance="feh"] floating enable
 for_window [class="mpv"] floating enable
 
+# no borders on firefox
+for_window [class="firefox" instance="Navigator"] border none
+
 # pulsemixer popup
 bindsym $mod+p exec --no-startup-id "$terminal --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable
-for_window [title="pulsemixer-popup"] position center
 
-# pulsemixer popup
+# nmtui popup
 bindsym $mod+n exec --no-startup-id "$terminal --title nmtui-popup -e nmtui"
-for_window [title="nmtui-popup"] floating enable
-for_window [title="nmtui-popup"] position center
+for_window [title="nmtui-popup"] floating enable, resize set 1000 1000, move position 0 0
 
 # taskwarrior popup
 bindsym $mod+t exec --no-startup-id "$terminal --title task-popup -e nvim -c TW"
-for_window [title="task-popup"] floating enable
-for_window [title="task-popup"] position center
+for_window [title="task-popup"] floating enable, resize set 1500 1200, move position 0 0
 
 # ranger popup
 bindsym $mod+e exec "$terminal --title ranger-popup -e ranger"
-for_window [title="ranger-popup"] floating enable
-for_window [title="ranger-popup"] position center
+for_window [title="ranger-popup"] fullscreen
 
+# htop popup
 bindsym $mod+i exec "$terminal --title htop-popup -e htop"
-for_window [title="htop-popup"] floating enable
-for_window [title="htop-popup"] position center
-
-# screenshot popup
-bindsym $mod+c exec --no-startup-id "gscreenshot"
-for_window [title="gscreenshot"] floating enable
-for_window [title="gscreenshot"] position center
+for_window [title="htop-popup"] fullscreen
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -98,7 +87,7 @@ bindsym $mod+x exec "/home/trevor/dotfiles/i3/quickterm/i3-quickterm shell"
 bindsym $mod+backspace exec "i3lock -i pictures/wallpapers/mt.png"
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id "rofi -show drun"
+bindsym $mod+space exec dmenu_run -nb '#1e1e1e' -sf '#1e1e1e' -sb '#7cafc2' -nf '#7cafc2'
 
 # split in horizontal orientation
 bindsym $mod+Shift+v split h
@@ -157,44 +146,6 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
-# set outputs
-workspace $ws1 output $primary
-workspace $ws2 output $primary
-workspace $ws3 output $primary
-workspace $ws4 output $primary
-workspace $ws5 output $primary
-workspace $ws6 output $primary
-workspace $ws7 output $primary
-workspace $ws8 output $primary
-workspace $ws9 output $primary
-
-set $wsa "a"
-set $wsb "b"
-set $wsc "c"
-set $wsd "d"
-
-mode "secondary" {
-        bindsym 1 workspace $wsa
-        bindsym 2 workspace $wsb
-        bindsym 3 workspace $wsc
-        bindsym 4 workspace $wsa
-
-        bindsym Shift+1 move container to workspace $wsa
-        bindsym Shift+2 move container to workspace $wsb
-        bindsym Shift+3 move container to workspace $wsc
-        bindsym Shift+4 move container to workspace $wsd
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+Tab mode "secondary"
-
-workspace $wsa output $secondary
-workspace $wsb output $secondary
-workspace $wsc output $secondary
-workspace $wsd output $secondary
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -211,11 +162,10 @@ bindsym $mod+Left    resize shrink width  10 px or 10 ppt
 bindsym $mod+Right   resize grow   width  10 px or 10 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# finds out, ijf available)
 bar {
-    output $primary
     colors {
-        background #000000
+        background #101010
         statusline #ffffff
         separator #666666
 
@@ -226,6 +176,7 @@ bar {
         binding_mode       #2f343a #900000 #ffffff
     }
 
+    position top
     workspace_buttons   yes
     status_command      i3status
 }
