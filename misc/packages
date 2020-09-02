@@ -34,6 +34,7 @@ gscreenshot
 gtk-chtheme
 htop
 i3blocks
+i3exit
 i3ipc-python-git
 iw
 lib32-readline
@@ -41,9 +42,11 @@ lib32-vulkan-icd-loader
 libgit2
 libpng12
 libreoffice-still
+librespot-git
 linux-zen
 lscolors-git
 lxappearance
+lxsession
 man-pages
 matcha-gtk-theme
 mips64-elf-binutils
@@ -63,10 +66,12 @@ openvpn
 p7zip
 papirus-icon-theme
 partclone
+pass
 pfetch-git
 picom
 pigz
 pkgconf
+playerctl
 polybar
 pulseaudio-bluetooth
 pulseaudio-jack
@@ -81,7 +86,6 @@ rtl88x2bu-dkms-git
 rust
 spotify
 spotify-tui
-spotifyd
 starship
 terminus-font
 texlive-bibtexextra
@@ -97,7 +101,6 @@ thefuck
 thunderbird
 tldr
 transmission-gtk
-tree
 ttf-font-awesome
 ttf-meslo
 tungsten
@@ -144,7 +147,6 @@ xorg-xsetroot
 xorg-xvinfo
 xorg-xwd
 xorg-xwud
-xss-lock
 yay
 youtube-mpv-git
 ytop

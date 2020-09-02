@@ -26,7 +26,7 @@ font-4 = Meslo LG S Nerd Font:size=11;0
 
 
 modules-left = i3 spotify
-modules-right = cpu memory temperature root hdd0 hdd1 ssd0 wireless-network date
+modules-right = cpu memory temperature root hdd0 hdd1 ssd0 vpn wireless-network backups date
 
 wm-restack = i3
 
@@ -46,11 +46,16 @@ overline-color = ${self.background}
 underline-size = 2
 underline-color = ${self.background}
 
+[module/backups]
+type = custom/script
+exec = cat /var/log/backup-status
+interval = 30
+
 [module/cpu]
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU:
+label = CPU
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
 ramp-coreload-0-foreground = #7cafc2
@@ -84,7 +89,7 @@ date-alt = %%{F#fff}%A, %d %B %Y %%{F#fff}%H:%M%%{F#666}:%%{F#7cafc2}%S%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
-label = MEM:
+label = MEM
 
 bar-used-width = 10
 bar-used-foreground-0 = #7cafc2
@@ -102,7 +107,7 @@ bar-used-empty-foreground = #444444
 
 [module/wireless-network]
 type = internal/network
-interface = wlp5s0
+interface = wlp10s0f3u2
 interval = 1.0
 ping-interval = 10
 
@@ -111,11 +116,20 @@ label-connected = %local_ip%   %downspeed%  %upspeed%
 label-disconnected =  disconnected
 label-disconnected-foreground = #66
 
+[module/vpn]
+type = internal/network
+interface = tun0
+interval = 5.0
+label-connected = VPN 
+label-disconnected = VPN 
+label-disconnected-foreground = #66
+
+
 [module/root]
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = ROOT: %percentage_used%%
+label-mounted = root %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #66
 
@@ -123,7 +137,7 @@ label-unmounted-foreground = #66
 type = internal/fs
 interval = 25
 mount-0 = /mnt/hdd0
-label-mounted =  HDD0: %percentage_used%%
+label-mounted =  hdd0 %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #66
 
@@ -131,7 +145,7 @@ label-unmounted-foreground = #66
 type = internal/fs
 interval = 25
 mount-0 = /mnt/hdd1
-label-mounted =  HDD1: %percentage_used%%
+label-mounted =  hdd1 %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #66
 
@@ -139,7 +153,7 @@ label-unmounted-foreground = #66
 type = internal/fs
 interval = 25
 mount-0 = /mnt/ssd0
-label-mounted =  SSD0: %percentage_used%%
+label-mounted =  ssd0 %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #66
 
@@ -151,6 +165,7 @@ date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 5
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
 warn-temperature = 70
 
 format = <label>
@@ -199,6 +214,6 @@ format-prefix = "  "
 format = <label>
 exec = python   /home/trevor/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
 
-format-underline = #1db954
+format-underline = #7cafc2
 
 ; vim:ft=dosini

@@ -12,9 +12,6 @@ picom -b -c &
 nitrogen --restore &
 xrdb ~/.Xresources
 
-# LOCKER
-xautolock -time 15 -corners ---- -locker "i3lock -i /home/trevor/pictures/wallpapers/mt.png" &
-
 # SESSION
 case $session in
     i3|i3wm           ) exec i3;;

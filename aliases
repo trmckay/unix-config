@@ -8,6 +8,15 @@ function add-alias {
     echo "\"$2\" aliased to $1"
     source ~/.zshrc
 }
+function spot {
+    if [ $(pgrep librespot) ]; then
+        spt
+    else
+        librespot -n "spotify-daemon" -b 320 -c .cache/librespot --device-type avr --initial-volume 100 --backend alsa -u `pass spotify/username` -p `pass spotify/password` </dev/null &>/dev/null &
+        disown %`jobs | grep librespot | grep -o -E '[0-9]+' | head -1`
+        spt
+    fi
+}
 
 alias edit-aliases="nvim ~/.aliases; refresh"
 alias edit-path="nvim ~/.path; refresh"
@@ -36,5 +45,4 @@ alias tmuxconf="nvim ~/.tmux.conf"
 alias cpmail="(cd ~; cat .calpoly.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
 alias gmail="(cd ~; cat .gmail.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
 alias muttrc="nvim ~/.base.muttrc"
-
-alias statcfg="nvim ~/.config/i3status/config"
+alias polycfg="nvim ~/.config/polybar/config"

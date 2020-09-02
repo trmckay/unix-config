@@ -46,7 +46,8 @@ bindsym $mod+w exec firefox
 
 bindsym $mod+e exec thunderbird
 
-bindsym $mod+s exec spotify
+bindsym $mod+s exec --no-startup-id "$TERMINAL --title spt-popup -e $HOME/scripts/spotify.sh"
+for_window [title="spt-popup"] fullscreen
 
 bindsym $mod+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
@@ -58,10 +59,10 @@ bindsym $mod+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
 bindsym $mod+r exec "$TERMINAL --title ranger-popup -e ranger"
-for_window [title="ranger-popup"] floating enable, position center
+for_window [title="ranger-popup"] fullscreen
 
 bindsym $mod+i exec "$TERMINAL --title htop-popup -e htop"
-for_window [title="htop-popup"] floating enable, position center
+for_window [title="htop-popup"] fullscreen
 
 bindsym $mod+c exec --no-startup-id "gscreenshot"
 for_window [title="gscreenshot"] floating enable, position center
@@ -133,10 +134,29 @@ bindsym $mod+Up      resize grow   height 10 px or 10 ppt
 bindsym $mod+Left    resize shrink width  10 px or 10 ppt
 bindsym $mod+Right   resize grow   width  10 px or 10 ppt
 
+bindsym $mod+period exec "playerctl next"
+bindsym $mod+comma exec "playerctl previous"
+bindsym $mod+slash exec "playerctl play-pause"
+
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
 "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+q mode "$mode_system"
 
 bindsym $mod+shift+f floating toggle
 
@@ -177,6 +197,8 @@ mode "secondary" {
 }
 bindsym $mod+Tab mode "secondary"
 
+# LOCKER
+exec --no-startup-id xautolock -time 15 -locker "i3exit lock"
 
 # STATUS BAR
 exec --no-startup-id $HOME/.config/polybar/launch.sh
