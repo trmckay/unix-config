@@ -67,6 +67,7 @@ pfetch-git
 picom
 pigz
 pkgconf
+polybar
 pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
@@ -78,12 +79,10 @@ rsstail
 rsync
 rtl88x2bu-dkms-git
 rust
-siji-git
 spotify
 spotify-tui
 spotifyd
 starship
-task
 terminus-font
 texlive-bibtexextra
 texlive-fontsextra
@@ -107,6 +106,7 @@ unrar
 unzip
 valgrind
 virtualbox
+vit
 vlc
 vscodium-bin
 wget
@@ -117,7 +117,6 @@ xorg-docs
 xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
-xorg-fonts-misc
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
