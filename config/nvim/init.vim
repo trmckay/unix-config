@@ -31,14 +31,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
-" Plug 'neovim/nvim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
-" Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/bin/fzf'
 Plug 'sainnhe/forest-night'
 Plug 'xarthurx/taskwarrior.vim'
@@ -46,15 +43,12 @@ call plug#end()
 
 highlight clear SignColumn
 
-" colorscheme
-" set termguicolors
-" let g:forest_night_enable_italic = 1
-" let g:forest_night_disable_italic_comment = 1
-" colorscheme forest-night
-
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme="base16"
+let g:airline_theme="base16_ashes"
+let g:airline_left_sep=""
+let g:airline_right_sep=""
+
 let mapleader = "\<Space>"
 
 " Shortcuts for quitting
@@ -151,5 +145,5 @@ let g:tex_conceal = ''
 let g:vimtex_fold_manual = 1
 let g:vimtex_latexmk_continuous = 1
 let g:vimtex_compiler_progname = 'latexmk'
-let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_method = 'mupdf'
 nnoremap <leader>p <cmd>VimtexCompile<cr>

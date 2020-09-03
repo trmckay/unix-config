@@ -1,7 +1,7 @@
 [bar/top]
 enable-ipc = true
 width = 100%
-height = 43
+height = 56
 dpi = 200
 
 background = #1f1f1f
@@ -18,9 +18,9 @@ module-margin-right = 1
 
 separator = |
 
-font-0 = Meslo LG S Nerd Font:size=9;0
+font-0 = Meslo LG S Nerd Font:size=11;0
 font-1 = Meslo LG S Nerd Font:size=11;2
-font-2 = Meslo LG S Nerd Font:size=14;0
+font-2 = Meslo LG S Nerd Font:size=11;0
 font-3 = Meslo LG S Nerd Font:pixelsize=11;1
 font-4 = Meslo LG S Nerd Font:size=11;0
 
@@ -90,7 +90,7 @@ animation-charging-framerate = 750
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU
+label = CPU:
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
 ramp-coreload-0-foreground = #7cafc2
@@ -124,9 +124,9 @@ date-alt = %%{F#fff}%A, %d %B %Y %%{F#fff}%H:%M%%{F#666}:%%{F#7cafc2}%S%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
-label = MEM
+label = MEM:
 
-bar-used-width = 20
+bar-used-width = 10
 bar-used-foreground-0 = #7cafc2
 bar-used-foreground-1 = #7cafc2
 bar-used-foreground-2 = #7cafc2
@@ -146,16 +146,14 @@ interface = wlp5s0
 interval = 1.0
 ping-interval = 10
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %local_ip%  %downspeed%  %upspeed%
+format-connected = <label-connected>
+label-connected = %local_ip%   %downspeed%  %upspeed%
 label-disconnected =  disconnected
 label-disconnected-foreground = #66
 
 [module/volume]
-type = internal/volume
-;speaker-mixer = Speaker
-;headphone-mixer = Headphone
-:headphone-id = 9
+type = internal/alsa
+headphone-id = 9
 
 format-volume = <ramp-volume> <label-volume>
 label-muted = ﱝ muted
@@ -200,8 +198,8 @@ warn-temperature = 70
 format = <label>
 format-warn = <label-warn>
 
-label = %temperature%
-label-warn = HOT! %temperature%
+label = %temperature-c%
+label-warn = HOT! %temperature-c%
 label-warn-foreground = #f00
 
 [module/i3]

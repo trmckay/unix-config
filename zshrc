@@ -6,7 +6,7 @@ source $HOME/.path
 export EDITOR=/usr/bin/nvim
 
 # oh-my-zsh
-plugins=(git colored-man-pages)
+plugins=(git colored-man-pages z)
 export ZSH="/usr/share/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 ZSH_THEME=""
