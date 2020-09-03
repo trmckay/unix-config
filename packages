@@ -26,6 +26,7 @@ figlet
 firefox
 flex
 fzf
+gamemode
 gcc8
 gimp
 giph
@@ -39,7 +40,6 @@ i3exit
 i3ipc-python-git
 iw
 lib32-readline
-lib32-vulkan-icd-loader
 libgit2
 libpng12
 libreoffice-still

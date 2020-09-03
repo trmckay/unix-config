@@ -43,11 +43,8 @@ for_window [window_type="menu"] floating enable
 
 # APP SHORTCUTS
 bindsym $mod+w exec firefox
-
 bindsym $mod+e exec thunderbird
-
-bindsym $mod+s exec --no-startup-id "$TERMINAL --title spt-popup -e $HOME/scripts/spotify.sh"
-for_window [title="spt-popup"] fullscreen
+bindsym $mod+s exec "spotify"
 
 bindsym $mod+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
@@ -71,7 +68,7 @@ bindsym $mod+Return exec $TERMINAL
 
 bindsym $mod+x exec "$HOME/dotfiles/i3/quickterm/i3-quickterm shell"
 
-bindsym $mod+space exec --no-startup-id "rofi -show drun"
+bindsym $mod+space exec "rofi -show drun"
 
 
 # WORKSPACES
@@ -197,8 +194,9 @@ mode "secondary" {
 }
 bindsym $mod+Tab mode "secondary"
 
-# LOCKER
-exec --no-startup-id xautolock -time 15 -locker "i3exit lock"
-
-# STATUS BAR
+# STARTUP
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id picom -b -c
+exec --no-startup-id dunst
+exec --no-startup-id xautolock -time 15 -locker "i3exit lock"
