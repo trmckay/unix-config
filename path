@@ -6,5 +6,5 @@ export PATH=$PATH:\
 /opt/riscv/bin:\
 /home/linuxbrew/.linuxbrew/bin:\
 $HOME/.local/bin:\
-$HOME/tools/llvm-project/build/bin:\
+mnt/hdd1/tools/llvm-project/build/bin:\
 $HOME/scripts

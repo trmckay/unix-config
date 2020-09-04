@@ -26,6 +26,7 @@ set signcolumn=yes
 syntax on
 
 call plug#begin()
+Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
@@ -121,6 +122,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " map <leader>t :NERDTreeToggle<CR>
 " let g:NERDTreeGitStatusUseNerdFonts = 1
 " let g:NERDTreeGitStatusShowClean = 1
+
+" quick-scope
+let g:qs_highlight_on_keys = ['f', 'F']
 
 " CHADTree
 " nnoremap <leader>t <cmd>CHADopen<cr>

@@ -26,6 +26,7 @@ figlet
 firefox
 flex
 fzf
+gamemode
 gcc8
 gimp
 giph
@@ -39,11 +40,11 @@ i3exit
 i3ipc-python-git
 iw
 lib32-readline
-lib32-vulkan-icd-loader
 libgit2
 libpng12
 libreoffice-still
 librespot-git
+libvirt
 linux-zen
 lscolors-git
 lxappearance
@@ -85,6 +86,7 @@ rsstail
 rsync
 rtl88x2bu-dkms-git
 rust
+sc-im
 spotify
 spotify-tui
 starship
@@ -114,6 +116,7 @@ vit
 vlc
 vscodium-bin
 wget
+wimlib
 xautolock
 xdg-user-dirs
 xorg-bdftopcf
