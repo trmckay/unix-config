@@ -56,7 +56,7 @@ bindsym $mod+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
 bindsym $mod+r exec "$TERMINAL --title ranger-popup -e ranger"
-for_window [title="ranger-popup"] fullscreen
+for_window [title="ranger-popup"] floating enable, position center
 
 bindsym $mod+i exec "$TERMINAL --title htop-popup -e htop"
 for_window [title="htop-popup"] fullscreen

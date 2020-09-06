@@ -46,3 +46,6 @@ alias cpmail="(cd ~; cat .calpoly.muttrc > .muttrc; cat .base.muttrc >> .muttrc)
 alias gmail="(cd ~; cat .gmail.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
 alias muttrc="nvim ~/.base.muttrc"
 alias polycfg="nvim ~/.config/polybar/config"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+alias open="xdg-open"

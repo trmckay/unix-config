@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BAR_ICON=""
+BAR_ICON=""
 NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
 
 get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
@@ -30,7 +30,7 @@ while true; do
         elif (( UPDATES > 1 )); then
             echo "$UPDATES Updates"
         else
-            echo $BAR_ICON
+            echo "Up to date"
         fi
         sleep 10
         get_total_updates
