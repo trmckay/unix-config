@@ -5,7 +5,6 @@ alsa-utils
 amd-ucode
 arandr
 arc-icon-theme
-audiofile
 autoconf
 automake
 awesome
@@ -28,6 +27,7 @@ flex
 fzf
 gamemode
 gcc8
+geckodriver
 gimp
 giph
 gparted
@@ -39,7 +39,6 @@ i3blocks
 i3exit
 i3ipc-python-git
 iw
-lib32-readline
 libgit2
 libpng12
 libreoffice-still
@@ -47,11 +46,13 @@ librespot-git
 lightdm-gtk-greeter-settings
 linux-zen
 lscolors-git
+lutris
 lxappearance
 lxsession
 man-pages
 matcha-gtk-theme
 mips64-elf-binutils
+mpd
 mpv
 msmtp
 mupdf
@@ -60,12 +61,13 @@ ncmpc
 ncurses5-compat-libs
 neofetch
 neovim
+nnn
 nvidia-dkms
 nvtop
 oh-my-zsh-git
 ookla-speedtest-bin
 openvpn
-p7zip
+pandoc
 partclone
 pass
 pfetch-git
@@ -78,7 +80,6 @@ pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
 ranger
-rclone
 rofi
 rsstail
 rsync
@@ -88,6 +89,7 @@ sc-im
 spotify
 spotify-tui
 starship
+steam
 terminus-font
 texlive-bibtexextra
 texlive-fontsextra
@@ -107,9 +109,7 @@ ttf-meslo
 tungsten
 ufw
 unrar
-unzip
 valgrind
-virtualbox
 vit
 vlc
 vscodium-bin
@@ -152,5 +152,4 @@ yay
 youtube-mpv-git
 ytop
 zenmonitor
-zip
 zsh-syntax-highlighting

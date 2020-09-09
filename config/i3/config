@@ -1,5 +1,8 @@
 # VARIABLES
 set $TERMINAL alacritty
+set $FILEBROWSER nnn
+set $WEBBROWSER firefox
+
 set $primary HDMI-0
 set $secondary DP-3
 set $mod Mod4
@@ -42,9 +45,9 @@ for_window [window_type="menu"] floating enable
 
 
 # APP SHORTCUTS
-bindsym $mod+w exec firefox
-bindsym $mod+e exec thunderbird
-bindsym $mod+s exec "spotify"
+bindsym $mod+w exec $WEBBROWSER
+bindsym $mod+i exec thunderbird
+bindsym $mod+s exec spotify
 
 bindsym $mod+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
@@ -55,10 +58,10 @@ for_window [title="nmtui-popup"] floating enable, position center
 bindsym $mod+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
-bindsym $mod+r exec "$TERMINAL --title ranger-popup -e ranger"
-for_window [title="ranger-popup"] floating enable, position center
+bindsym $mod+e exec "$TERMINAL --title fb-popup -e $FILEBROWSER"
+for_window [title="fb-popup"] floating enable, position center
 
-bindsym $mod+i exec "$TERMINAL --title htop-popup -e htop"
+bindsym $mod+u exec "$TERMINAL --title htop-popup -e htop"
 for_window [title="htop-popup"] fullscreen
 
 bindsym $mod+c exec --no-startup-id "gscreenshot"
@@ -126,10 +129,16 @@ bindsym $mod+z focus mode_toggle
 bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-bindsym $mod+Down    resize shrink height 10 px or 10 ppt
-bindsym $mod+Up      resize grow   height 10 px or 10 ppt
-bindsym $mod+Left    resize shrink width  10 px or 10 ppt
-bindsym $mod+Right   resize grow   width  10 px or 10 ppt
+mode "resize" {
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym k resize grow   height 10 px or 10 ppt
+    bindsym h resize shrink width  10 px or 10 ppt
+    bindsym l resize grow   width  10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
 
 bindsym $mod+period exec "playerctl next"
 bindsym $mod+comma exec "playerctl previous"

@@ -45,7 +45,6 @@ alias tmuxconf="nvim ~/.tmux.conf"
 alias cpmail="(cd ~; cat .calpoly.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
 alias gmail="(cd ~; cat .gmail.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
 alias muttrc="nvim ~/.base.muttrc"
-alias polycfg="nvim ~/.config/polybar/config"
+alias polycfg="nvim ~/.config/polybar/config.ini"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
 alias open="xdg-open"
