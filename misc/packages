@@ -19,6 +19,7 @@ ccls
 cpupower
 cronie
 dhcpcd
+discord
 dunst
 fd
 figlet
@@ -30,6 +31,7 @@ gcc8
 geckodriver
 gimp
 giph
+gnome-calendar
 gparted
 grub
 gscreenshot
@@ -76,7 +78,6 @@ pigz
 pkgconf
 playerctl
 polybar
-pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
 ranger
@@ -122,6 +123,7 @@ xorg-docs
 xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
+xorg-luit
 xorg-server-xnest
 xorg-server-xvfb
 xorg-server-xwayland

@@ -2,6 +2,7 @@
 set $TERMINAL alacritty
 set $FILEBROWSER nnn
 set $WEBBROWSER firefox
+set $SHELL zsh
 
 set $primary HDMI-0
 set $secondary DP-3
@@ -15,7 +16,7 @@ popup_during_fullscreen leave_fullscreen
 
 # STYLE
 gaps inner 10
-gaps outer 15
+gaps outer 5
 
 default_border none
 new_window none
@@ -58,7 +59,7 @@ for_window [title="nmtui-popup"] floating enable, position center
 bindsym $mod+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
-bindsym $mod+e exec "$TERMINAL --title fb-popup -e $FILEBROWSER"
+bindsym $mod+e exec "$TERMINAL --title fb-popup -e /home/trevor/scripts/filemgr.sh"
 for_window [title="fb-popup"] floating enable, position center
 
 bindsym $mod+u exec "$TERMINAL --title htop-popup -e htop"
