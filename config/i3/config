@@ -47,8 +47,12 @@ for_window [window_type="menu"] floating enable
 
 # APP SHORTCUTS
 bindsym $mod+w exec $WEBBROWSER
+
 bindsym $mod+i exec thunderbird
+
 bindsym $mod+s exec spotify
+
+bindsym $mod+Return exec $TERMINAL
 
 bindsym $mod+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
@@ -68,12 +72,27 @@ for_window [title="htop-popup"] fullscreen
 bindsym $mod+c exec --no-startup-id "gscreenshot"
 for_window [title="gscreenshot"] floating enable, position center
 
-bindsym $mod+Return exec $TERMINAL
-
 bindsym $mod+x exec "$HOME/dotfiles/i3/quickterm/i3-quickterm shell"
 
 bindsym $mod+space exec "rofi -show drun"
 
+
+# WEB SHORTCUTS
+mode "shortcuts" {
+    bindsym c exec "$WEBBROWSER -new-window https://calendar.google.com", mode "default"
+    bindsym g exec "$WEBBROWSER -new-window https://github.com/trmckay", mode "default"
+    bindsym d exec "$WEBBROWSER -new-window https://www.discover.com", mode "default"
+    bindsym y exec "$WEBBROWSER -new-window https://www.youtube.com/feed/subscriptions", mode "default"
+    bindsym a exec "$WEBBROWSER -new-window https://www.atlantic.com", mode "default"
+    bindsym t exec "$WEBBROWSER -new-window https://www.nyt.com", mode "default"
+    bindsym e exec "$WEBBROWSER -new-window https://www.economist.com", mode "default"
+    bindsym p exec "$WEBBROWSER -new-window https://my.calpoly.edu", mode "default"
+    bindsym i exec "$WEBBROWSER -new-window https://canvas.calpoly.edu", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+o mode shortcuts
 
 # WORKSPACES
 set $ws1 "1"

@@ -31,7 +31,6 @@ gcc8
 geckodriver
 gimp
 giph
-gnome-calendar
 gparted
 grub
 gscreenshot
@@ -78,6 +77,7 @@ pigz
 pkgconf
 playerctl
 polybar
+pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
 ranger
