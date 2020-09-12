@@ -2,4 +2,3 @@
 0 10 * * * /home/trevor/scripts/update-scripts.sh > /home/trevor/.log/update-scripts.log
 0 10 * * SUN rm -rf /home/trevor/.cache
 */30 * * * * task sync
-*/30 * * * * /home/trevor/scripts/push-onedrive.sh && /home/trevor/scripts/pull-onedrive.sh

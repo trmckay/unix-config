@@ -1,3 +1,10 @@
+# source aliases and path
+source $HOME/.aliases
+source $HOME/.path
+
+# neovim
+export EDITOR=/usr/bin/nvim
+
 if [[ "$TERM" == "linux" ]]; then
     echo "1) i3    2) awesome    3) bspwm    4) dwm    *) none"
     echo -n "start environment: "
@@ -11,7 +18,4 @@ if [[ "$TERM" == "linux" ]]; then
         "4") xinit dwm;;
         *) neofetch;;
     esac
-else
-    echo ""
-    neofetch
 fi

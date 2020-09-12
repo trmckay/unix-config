@@ -1,6 +1,5 @@
 # VARIABLES
 set $TERMINAL alacritty
-set $FILEBROWSER nnn
 set $WEBBROWSER firefox
 set $SHELL zsh
 
@@ -35,8 +34,6 @@ client.background       #ffffff
 
 
 # FLOATING
-for_window [class="feh" instance="feh"] floating enable
-for_window [class="mpv"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -44,6 +41,10 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
+# APP-SPECIFIC TWEAKS
+for_window [class="feh" instance="feh"] floating enable
+for_window [class="mpv"] floating enable, position center
+for_window [class="MuPDF"] floating enable, move to workspace $wsa, position center
 
 # APP SHORTCUTS
 bindsym $mod+w exec $WEBBROWSER
@@ -63,10 +64,10 @@ for_window [title="nmtui-popup"] floating enable, position center
 bindsym $mod+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
-bindsym $mod+e exec "$TERMINAL --title fb-popup -e /home/trevor/scripts/filemgr.sh"
-for_window [title="fb-popup"] floating enable, position center
+bindsym $mod+e exec --no-startup-id "$TERMINAL --title nnn-popup -e '/home/trevor/scripts/nnn.sh'"
+for_window [title="nnn-popup"] floating enable, position 0 0
 
-bindsym $mod+u exec "$TERMINAL --title htop-popup -e htop"
+bindsym $mod+u exec --no-startup-id "$TERMINAL --title htop-popup -e htop"
 for_window [title="htop-popup"] fullscreen
 
 bindsym $mod+c exec --no-startup-id "gscreenshot"
