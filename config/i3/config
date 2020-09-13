@@ -53,7 +53,7 @@ bindsym $mod+i exec thunderbird
 
 bindsym $mod+s exec spotify
 
-bindsym $mod+Return exec $TERMINAL
+bindsym $mod+Return exec "$TERMINAL"
 
 bindsym $mod+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
@@ -208,10 +208,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 mode "secondary" {
-        bindsym 1 workspace $wsa
-        bindsym 2 workspace $wsb
-        bindsym 3 workspace $wsc
-        bindsym 4 workspace $wsa
+        bindsym 1 workspace $wsa, mode default
+        bindsym 2 workspace $wsb, mode default
+        bindsym 3 workspace $wsc, mode default
+        bindsym 4 workspace $wsa, mode default
 
         bindsym Shift+1 move container to workspace $wsa
         bindsym Shift+2 move container to workspace $wsb

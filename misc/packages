@@ -20,7 +20,7 @@ cpupower
 cronie
 dhcpcd
 discord
-dropbox
+dropbox-cli
 dunst
 fd
 figlet
@@ -36,6 +36,7 @@ grub
 gscreenshot
 gtk-chtheme
 htop
+i3-agenda
 i3blocks
 i3exit
 i3ipc-python-git
@@ -81,6 +82,7 @@ polybar
 pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
+python-pywal
 ranger
 rofi
 rsstail
@@ -88,6 +90,7 @@ rsync
 rtl88x2bu-dkms-git
 rust
 sc-im
+slack-desktop
 spotify
 spotify-tui
 starship
