@@ -143,23 +143,17 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+bindsym $mod+Mod1+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Mod1+k resize grow   height 10 px or 10 ppt
+bindsym $mod+Mod1+h resize shrink width  10 px or 10 ppt
+bindsym $mod+Mod1+l resize grow   width  10 px or 10 ppt
+
 bindsym $mod+f fullscreen toggle
 
 bindsym $mod+z focus mode_toggle
 
 bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
-
-mode "resize" {
-    bindsym j resize shrink height 10 px or 10 ppt
-    bindsym k resize grow   height 10 px or 10 ppt
-    bindsym h resize shrink width  10 px or 10 ppt
-    bindsym l resize grow   width  10 px or 10 ppt
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
 
 bindsym $mod+period exec "playerctl next"
 bindsym $mod+comma exec "playerctl previous"
