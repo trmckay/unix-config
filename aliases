@@ -20,6 +20,23 @@ function spot {
 function makepres {
     pandoc -t beamer $1 -o `echo $1 | sed s/.md/.pdf/`
 }
+function mupdfi {
+    /usr/bin/mupdf -I $1 &
+}
+function mupdf {
+    /usr/bin/mupdf $1 &
+}
+function makenote {
+    if [[ "$2" == "md" ]]; then
+        mkdir -p $1/figures
+        cat ~/templates/notes.md > $1/$1.md
+    elif [[ "$2" == "tex" ]]; then
+        mkdir -p $1/figures
+        cat ~/templates/notes.tex > $1/$1.tex
+    else
+        echo "unsupported filetype"
+    fi
+}
 
 alias edit-aliases="nvim ~/.aliases; refresh"
 alias edit-path="nvim ~/.path; refresh"
@@ -51,3 +68,6 @@ alias muttrc="nvim ~/.base.muttrc"
 alias polycfg="nvim ~/.config/polybar/config.ini"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias open="xdg-open"
+alias mkdir="mkdir -p"
+alias sd="sudo"
+alias polybar-refresh="pkill polybar; ~/.config/polybar/launch.sh"
