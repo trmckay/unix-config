@@ -41,6 +41,7 @@ i3-agenda
 i3blocks
 i3exit
 i3ipc-python-git
+inkscape
 iw
 libgit2
 libpng12
@@ -83,7 +84,7 @@ polybar
 pulseaudio-bluetooth
 pulseaudio-jack
 pulsemixer
-python-pywal
+pywal-git
 ranger
 rofi
 rsstail
@@ -96,6 +97,7 @@ spotify
 spotify-tui
 starship
 steam
+terminator
 terminus-font
 texlive-bibtexextra
 texlive-fontsextra
