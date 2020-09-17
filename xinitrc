@@ -38,10 +38,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-nitrogen --restore &
-picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil &
-/home/trevor/.config/polybar/launch.sh &
-xfce4-power-manager
+/home/trevor/.xprofile &
 
 get_session(){
 	local dbus_args=(--sh-syntax --exit-with-session)

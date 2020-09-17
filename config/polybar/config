@@ -3,185 +3,95 @@ enable-ipc = true
 width = 100%
 height = 56
 dpi = 200
-
 background = #1f1f1f
 foreground = #eee
-
 line-color = ${self.background}
 line-size = 1
-
 padding-left = 1
 padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
-
-
 separator = |
-
-font-0 = Meslo LG S Nerd Font:size=11;0
-font-1 = Meslo LG S Nerd Font:size=11;2
-font-2 = Meslo LG S Nerd Font:size=11;0
-font-3 = Meslo LG S Nerd Font:pixelsize=11;1
-font-4 = Meslo LG S Nerd Font:size=11;0
-
-
-modules-left = i3 spotify
-modules-right = cpu memory temperature filesystem hdd volume wireless-network power_draw battery date
-
+font-0 = NotoSansMono Nerd Font:size=9;0
+font-1 = NotoSansMono Nerd Font:size=9;2
+font-2 = NotoSansMono Nerd Font:size=9;0
+font-3 = NotoSansMono Nerd Font:pixelsize=9;1
+font-4 = NotoSansMono Nerd Font:size=9;0
+modules-left = i3
+modules-right = memory cpu temperature filesystem network_loc network_speed power_draw battery date title
 wm-restack = i3
-
 tray-position = right
 tray-scale = 1.0
-;tray-transparent = true
 tray-background = ${self.background}
 tray-maxsize = 64
-
 tray-offset-y = 0
-
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-
 overline-size = 10
 overline-color = ${self.background}
 underline-size = 2
 underline-color = ${self.background}
 
+[module/title]
+type = custom/text
+content = trevor@inspiron
+
 [module/power_draw]
 type = custom/script
-
 exec = /home/trevor/.config/polybar/power.sh
 interval = 2
 
 [module/battery]
 type = internal/battery
 full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-
-label-charging = " %percentage%% %time%h"
-label-discharging = " %percentage%% %time%h"
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full =
+label-charging = "BATT: %percentage%%"
+label-discharging = "BATT: %percentage%%"
 
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
-label = CPU:
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #7cafc2
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #7cafc2
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #7cafc2
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #7cafc2
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #7cafc2
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #7cafc2
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
+format = <label>
+label = CPU: %percentage%%
 
 [module/date]
 type = internal/date
-date =  %%{F#99}%Y-%m-%d%%{F-} %%{F#fff}%H:%M:%S%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y %%{F#fff}%H:%M%%{F#666}:%%{F#7cafc2}%S%%{F-}
+date =  %Y-%m-%d %H:%M:%S
+date-alt = %A, %d %B %Y %H:%M:%S
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = MEM:
+format = <label>
+label = MEM: %gb_used% (%percentage_used%%)
 
-bar-used-width = 10
-bar-used-foreground-0 = #7cafc2
-bar-used-foreground-1 = #7cafc2
-bar-used-foreground-2 = #7cafc2
-bar-used-foreground-3 = #ff5555
-bar-used-indicator =
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
-
-[module/wireless-network]
+[module/network_loc]
 type = internal/network
 interface = wlp5s0
 interval = 1.0
 ping-interval = 10
-
 format-connected = <label-connected>
-label-connected = %local_ip%   %downspeed%  %upspeed%
-label-disconnected =  disconnected
+label-connected = NET: %essid% (%local_ip%)
+label-disconnected = Disconnected
 label-disconnected-foreground = #66
 
-[module/volume]
-type = internal/alsa
-headphone-id = 9
-
-format-volume = <ramp-volume> <label-volume>
-label-muted = ﱝ muted
-label-muted-foreground = #66
-
-ramp-volume-0 = 
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-ramp-volume-3 = 
-
+[module/network_speed]
+type = internal/network
+interface = wlp5s0
+interval = 1.0
+ping-interval = 10
+format-connected = <label-connected>
+label-connected = SPEED: down: %downspeed% up: %upspeed%
+label-disconnected = Disconnected
+label-disconnected-foreground = #66
 
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
-label-mounted = SSD: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = #66
-
-[module/hdd]
-type = internal/fs
-interval = 25
-
-mount-0 = /mnt/hdd
-
-label-mounted =  HDD: %percentage_used%%
+mount-1 = /mnt/hdd
+label-mounted = %mountpoint%: %used%/%total% (%percentage_used%%)
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #66
 
@@ -194,53 +104,44 @@ date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 type = internal/temperature
 thermal-zone = 5
 warn-temperature = 70
-
 format = <label>
 format-warn = <label-warn>
-
 label = %temperature-c%
 label-warn = HOT! %temperature-c%
 label-warn-foreground = #f00
 
 [module/i3]
 type = internal/i3
-
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
-
 format = <label-state> <label-mode>
-
 label-mode = %mode%
 label-mode-padding = 0
 label-mode-background = #e60053
-
 label-focused =  %index%
 label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #7cafc2
+label-focused-underline = #ffffff
 label-focused-padding = 1
-
 label-unfocused = %index%
 label-unfocused-padding = 1
 label-visible = %index%
-label-visible-underline = #555555
+label-visible-underline = #ffffff
 label-visible-padding = 1
 label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
+label-urgent-foreground = #ffffff
+label-urgent-background = #ff4040
 label-urgent-padding = 1
 label-separator = |
 label-separator-padding = 0
-label-separator-foreground = #7cafc2
+label-separator-foreground = #ffffff
 
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "  "
+format-prefix = "Playing: "
 format = <label>
 exec = python   /home/trevor/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
-
 format-underline = #1db954
 
 ; vim:ft=dosini
