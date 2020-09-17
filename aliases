@@ -73,3 +73,5 @@ alias sd="sudo"
 alias polybar-refresh="pkill polybar; ~/.config/polybar/launch.sh"
 
 alias rn="ranger"
+
+alias mpv-theater="mpv --vf-add=sub --video-rotate=90"

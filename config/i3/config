@@ -23,7 +23,7 @@ font pango: Meslo LG S 10
 
 set $COLOR_1  #66a590
 set $COLOR_2  #88fc8c
-set $COLOR_FG #ffffff
+set $COLOR_FG #66a590
 set $COLOR_BG #101010
 
 # class                 border    backgr.   text      indicator child_border
@@ -46,6 +46,8 @@ for_window [class="mpv"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="MuPDF"] floating enable, move to workspace $wsa
 
+for_window [title="mpv-theater-view"] move to workspace $wsa, fullscreen
+
 # APP SHORTCUTS
 bindsym $MOD+w exec $WEBBROWSER
 
@@ -53,7 +55,7 @@ bindsym $MOD+i exec thunderbird
 
 bindsym $MOD+s exec spotify
 
-bindsym $MOD+Return exec "$TERMINAL"
+bindsym $MOD+Return exec "$TERMINAL -e tmux"
 
 bindsym $MOD+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
