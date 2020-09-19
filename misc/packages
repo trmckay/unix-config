@@ -32,11 +32,13 @@ gcc8
 geckodriver
 gimp
 giph
+github-cli
 gparted
 grub
 gscreenshot
 gtk-chtheme
 htop
+hugo
 i3-agenda
 i3blocks
 i3exit
@@ -50,6 +52,7 @@ librespot-git
 lightdm-gtk-greeter-settings
 linux-zen
 lscolors-git
+ltspice
 lutris
 lxappearance
 lxsession
@@ -60,6 +63,7 @@ mpd
 mpv
 msmtp
 mupdf
+nano
 ncdu
 ncmpc
 ncurses5-compat-libs
@@ -92,6 +96,7 @@ rsync
 rtl88x2bu-dkms-git
 rust
 sc-im
+screenkey
 slack-desktop
 spotify
 spotify-tui
@@ -112,7 +117,6 @@ thefuck
 thunderbird
 tldr
 transmission-gtk
-ttf-font-awesome
 ttf-meslo
 tungsten
 ufw

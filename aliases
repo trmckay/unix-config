@@ -3,11 +3,13 @@
 function tgz {
     tar cf - $2 | pigz > $1
 }
+
 function add-alias {
     echo "\nalias $1=\"$2\"" >> $HOME/.aliases
     echo "\"$2\" aliased to $1"
     source ~/.zshrc
 }
+
 function spot {
     if [ $(pgrep librespot) ]; then
         spt
@@ -17,25 +19,23 @@ function spot {
         spt
     fi
 }
+
 function makepres {
     pandoc -t beamer $1 -o `echo $1 | sed s/.md/.pdf/`
 }
+
 function mupdfi {
     /usr/bin/mupdf -I $1 &
 }
+
 function mupdf {
     /usr/bin/mupdf $1 &
 }
-function makenote {
-    if [[ "$2" == "md" ]]; then
-        mkdir -p $1/figures
-        cat ~/templates/notes.md > $1/$1.md
-    elif [[ "$2" == "tex" ]]; then
-        mkdir -p $1/figures
-        cat ~/templates/notes.tex > $1/$1.tex
-    else
-        echo "unsupported filetype"
-    fi
+
+# issue warning and consume arguments
+function find() {
+    echo 'Use fd instead'
+    echo "$@" > /dev/null
 }
 
 alias edit-aliases="nvim ~/.aliases; refresh"
@@ -48,7 +48,6 @@ alias due="task due:today"
 alias vimrc="vim ~/.config/nvim/init.vim"
 alias i3cfg="vim ~/.config/i3/config"
 alias ts="task sync"
-alias untar="tar xf"
 alias zshrc="nvim ~/.zshrc; source ~/.zshrc"
 alias svim="sudo -E nvim"
 alias pls="sudo"
@@ -71,7 +70,6 @@ alias open="xdg-open"
 alias mkdir="mkdir -p"
 alias sd="sudo"
 alias polybar-refresh="pkill polybar; ~/.config/polybar/launch.sh"
-
 alias rn="ranger"
-
 alias mpv-theater="mpv --vf-add=sub --video-rotate=90"
+alias wcrec="ffmpeg -f v4l2 -video_size 640x480 -r 24 -i /dev/video0 -f alsa -ac 1 -i hw:3,0 videos/recordings/wcrec-$(date -u +"%Y-%m-%d-%H%M%S").mp4"

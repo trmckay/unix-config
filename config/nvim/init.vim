@@ -28,7 +28,6 @@ syntax on
 autocmd BufRead,BufNewFile * setlocal nospell
 autocmd BufRead,BufNewFile *.* setlocal nospell
 autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.txt setlocal spell
 autocmd BufRead,BufNewFile *.tex setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -107,7 +106,8 @@ autocmd BufWritePre * %s/\s\+$//e
 " pandoc
 noremap <buffer> <leader>pb :Pandoc! beamer<cr><cr>
 noremap <buffer> <leader>pd :Pandoc!<cr><cr>
-let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#modules#disabled = ["folding","formatting"]
+let g:pandoc#syntax#conceal#use = 0
 
 "coc-nvim"
 " trigger with tab
