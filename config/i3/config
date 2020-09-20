@@ -3,8 +3,6 @@ set $TERMINAL   alacritty
 set $WEBBROWSER firefox
 set $SHELL      zsh
 
-set $SCRIPT_DIR "~/scripts"
-
 set $PRIMARY    HDMI-0
 set $SECONDARY  DP-3
 set $MOD        Mod4
@@ -84,13 +82,13 @@ bindsym $MOD+space exec "rofi -show drun"
 
 # MUSIC SHORTCUTS
 mode "music shortcuts" {
-    bindsym k exec "$SCRIPT_DIR/listen.sh kusc", mode default
-    bindsym l exec "$SCRIPT_DIR/listen.sh lofi", mode default
-    bindsym j exec "$SCRIPT_DIR/listen.sh jazz", mode default
-    bindsym q exec "$SCRIPT_DIR/listen.sh", mode default
+    bindsym k exec "/home/trevor/scripts/listen.sh kusc", mode "default"
+    bindsym l exec "/home/trevor/scripts/listen.sh lofi", mode "default"
+    bindsym j exec "/home/trevor/scripts/listen.sh jazz", mode "default"
+    bindsym q exec "/home/trevor/scripts/listen.sh", mode "default"
 
-    bindsym enter mode default
-    bindsym escape mode default
+    bindsym Enter mode default
+    bindsym Escape mode default
 }
 bindsym $MOD+shift+m mode "music shortcuts"
 
