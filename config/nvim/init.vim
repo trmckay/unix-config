@@ -42,16 +42,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'lervag/vimtex'
-" Plug 'SirVer/ultisnips'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
-" Plug 'norcalli/nvim-colorizer.lua'
 Plug '/usr/bin/fzf'
 Plug 'sainnhe/forest-night'
 Plug 'xarthurx/taskwarrior.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 highlight clear SignColumn
@@ -74,7 +74,7 @@ autocmd BufRead,BufNewFile *.cir setlocal filetype=cir
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "base16"
+let g:airline_theme = "base16_adwaita"
 
 " Shortcuts for quitting
 nnoremap <leader>Q <cmd>qa!<cr>
@@ -99,9 +99,6 @@ tnoremap <Esc> <C-\><C-n>
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
-
-" colorizer
-" lua require'colorizer'.setup()
 
 " pandoc
 noremap <buffer> <leader>pb :Pandoc! beamer<cr><cr>
@@ -139,8 +136,10 @@ nmap <leader>rn <Plug>(coc-rename)
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']
 
-" CoC-explorer
-nnoremap <leader>e <cmd>CocCommand explorer<cr>
+" CHADtree
+nnoremap <leader>e <cmd>CHADopen<cr>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CHADopen
 
 " Fuzzy finder
 nnoremap <leader>s <cmd>FZF<cr>

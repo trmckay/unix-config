@@ -68,6 +68,7 @@ ncdu
 ncmpc
 ncurses5-compat-libs
 neofetch
+neomutt
 neovim
 nethogs
 nnn
@@ -95,6 +96,7 @@ rsstail
 rsync
 rtl88x2bu-dkms-git
 rust
+s-nail
 sc-im
 screenkey
 slack-desktop

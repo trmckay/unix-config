@@ -64,7 +64,10 @@ for_window [title="pulsemixer-popup"] floating enable, position center
 bindsym $MOD+n exec --no-startup-id "$TERMINAL --title nmtui-popup -e nmtui"
 for_window [title="nmtui-popup"] floating enable, position center
 
-bindsym $MOD+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
+bindsym $MOD+t exec --no-startup-id "$TERMINAL --title task-popup -e todo"
+for_window [title="task-popup"] floating enable, position center
+
+bindsym $MOD+shift+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
 bindsym $MOD+e exec --no-startup-id "$TERMINAL --title ranger-popup -e ranger"
@@ -98,7 +101,7 @@ mode "web shortcuts" {
     bindsym g exec "$WEBBROWSER -new-window https://github.com/trmckay", mode "default"
     bindsym d exec "$WEBBROWSER -new-window https://www.discover.com", mode "default"
     bindsym y exec "$WEBBROWSER -new-window https://www.youtube.com/feed/subscriptions", mode "default"
-    bindsym a exec "$WEBBROWSER -new-window https://www.atlantic.com", mode "default"
+    bindsym a exec "$WEBBROWSER -new-window https://www.theatlantic.com", mode "default"
     bindsym t exec "$WEBBROWSER -new-window https://www.nyt.com", mode "default"
     bindsym e exec "$WEBBROWSER -new-window https://www.economist.com", mode "default"
     bindsym p exec "$WEBBROWSER -new-window https://my.calpoly.edu", mode "default"
