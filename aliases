@@ -3,13 +3,11 @@
 function tgz {
     tar cf - $2 | pigz > $1
 }
-
 function add-alias {
     echo "\nalias $1=\"$2\"" >> $HOME/.aliases
     echo "\"$2\" aliased to $1"
     source ~/.zshrc
 }
-
 function spot {
     if [ $(pgrep librespot) ]; then
         spt
@@ -31,11 +29,16 @@ function mupdfi {
 function mupdf {
     /usr/bin/mupdf $1 &
 }
-
-# issue warning and consume arguments
 function find() {
     echo 'Use fd instead'
     echo "$@" > /dev/null
+}
+function peek() {
+    if [ -d $1 ]; then
+        ls $1
+    else
+        less $1
+    fi
 }
 
 alias edit-aliases="nvim ~/.aliases; refresh"
@@ -74,4 +77,5 @@ alias rn="ranger"
 alias mpv-theater="mpv --vf-add=sub --video-rotate=90"
 alias wcrec="ffmpeg -f v4l2 -video_size 640x480 -r 24 -i /dev/video0 -f alsa -ac 1 -i hw:3,0 videos/recordings/wcrec-$(date -u +"%Y-%m-%d-%H%M%S").mp4"
 alias tree="tree -C"
-alias wait-dropbox="while [[ '`dropbox-cli status`' != '*Up to date*' ]]; do sleep 60; done"
+alias wait-dropbox="while [ '$(dropbox-cli status)' != 'Up to date' ]; do sleep 60; done"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

@@ -101,8 +101,7 @@ tnoremap <Esc> <C-\><C-n>
 autocmd BufWritePre * %s/\s\+$//e
 
 " pandoc
-noremap <buffer> <leader>pb :Pandoc! beamer<cr><cr>
-noremap <buffer> <leader>pd :Pandoc!<cr><cr>
+noremap <buffer> <leader>pd :Pandoc! pdf<cr><cr>
 let g:pandoc#modules#disabled = ["folding","formatting"]
 let g:pandoc#syntax#conceal#use = 0
 
