@@ -17,7 +17,6 @@ function spot {
         spt
     fi
 }
-
 function makepres {
     pandoc -t beamer $1 -o `echo $1 | sed s/.md/.pdf/`
 }
@@ -25,9 +24,11 @@ function makepres {
 function mupdfi {
     /usr/bin/mupdf -I $1 &
 }
-
 function mupdf {
     /usr/bin/mupdf $1 &
+}
+function zathura {
+    /usr/bin/zathura $1 &
 }
 function find() {
     echo 'Use fd instead'
@@ -40,7 +41,6 @@ function peek() {
         less $1
     fi
 }
-
 alias edit-aliases="nvim ~/.aliases; refresh"
 alias edit-path="nvim ~/.path; refresh"
 alias vi="nvim"
@@ -73,9 +73,9 @@ alias open="xdg-open"
 alias mkdir="mkdir -p"
 alias sd="sudo"
 alias polybar-refresh="pkill polybar; ~/.config/polybar/launch.sh"
-alias rn="ranger"
 alias mpv-theater="mpv --vf-add=sub --video-rotate=90"
 alias wcrec="ffmpeg -f v4l2 -video_size 640x480 -r 24 -i /dev/video0 -f alsa -ac 1 -i hw:3,0 videos/recordings/wcrec-$(date -u +"%Y-%m-%d-%H%M%S").mp4"
 alias tree="tree -C"
 alias wait-dropbox="while [ '$(dropbox-cli status)' != 'Up to date' ]; do sleep 60; done"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias rn='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

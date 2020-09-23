@@ -23,6 +23,7 @@ discord
 dropbox-cli
 dunst
 edk2-ovmf
+entr
 fd
 figlet
 firefox
@@ -127,7 +128,6 @@ valgrind
 virt-manager
 vit
 vlc
-vscodium-bin
 wget
 wimlib
 xautolock
