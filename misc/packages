@@ -54,7 +54,6 @@ lightdm-gtk-greeter-settings
 linux-zen
 lscolors-git
 ltspice
-lutris
 lxappearance
 lxsession
 man-pages
@@ -78,6 +77,7 @@ nvtop
 oh-my-zsh-git
 ookla-speedtest-bin
 openvpn
+p7zip
 pandoc
 partclone
 pass
@@ -104,7 +104,6 @@ slack-desktop
 spotify
 spotify-tui
 starship
-steam
 terminator
 terminus-font
 texlive-bibtexextra

@@ -61,7 +61,6 @@ alias cpufreq="watch grep \\\"cpu MHz\\\" /proc/cpuinfo"
 alias vimplug="nvim -c PlugInstall -c UpdateRemotePlugins -c qa!"
 alias vt="nvim -c TW"
 alias vpnrst="sudo systemctl restart openvpn-client@surfshark-la-udp.service"
-alias wc="webcam-toggle.sh"
 alias wa="/home/trevor/scripts/wa-shell.sh"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias cpmail="(cd ~; cat .calpoly.muttrc > .muttrc; cat .base.muttrc >> .muttrc); neomutt"
@@ -79,3 +78,6 @@ alias tree="tree -C"
 alias wait-dropbox="while [ '$(dropbox-cli status)' != 'Up to date' ]; do sleep 60; done"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias rn='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias db='dropbox-cli'
+alias dropbox='dropbox-cli'
+alias zt="zathura"
