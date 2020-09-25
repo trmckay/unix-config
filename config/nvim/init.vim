@@ -9,6 +9,7 @@ set ignorecase
 set incsearch
 set autoindent
 set autoread
+set shortmess=a
 set expandtab
 set shiftwidth=4
 set smartindent
@@ -46,8 +47,9 @@ Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'lervag/vimtex'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
-Plug '/usr/bin/fzf'
 Plug 'sainnhe/forest-night'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'xarthurx/taskwarrior.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -150,7 +152,9 @@ let g:neoformat_cpp_clangformat = {
 \}
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
-nnoremap <leader>f <cmd>Neoformat<cr>
+
+" fzf
+nnoremap <leader>f <cmd>BLines<cr>
 
 " snippets
 let g:UltiSnipsExpandTrigger='<tab>'
@@ -161,7 +165,6 @@ let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:tex_flavor  = 'latex'
 let g:tex_conceal = ''
 let g:vimtex_fold_manual = 1
-let g:vimtex_latexmk_continuous = 1
 let g:vimtex_compiler_progname = 'latexmk'
 let g:vimtex_view_method = 'zathura'
 nnoremap <leader>p <cmd>VimtexCompile<cr>

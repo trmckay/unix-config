@@ -58,6 +58,9 @@ bindsym $MOD+s exec spotify
 bindsym $MOD+Return exec "$TERMINAL"
 bindsym $MOD+shift+Return exec "$TERMINAL -e tmux"
 
+bindsym $MOD+o exec --no-startup-id "fzf-open"
+for_window [title="fzf-open-run"] floating enable, position center
+
 bindsym $MOD+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
 for_window [title="pulsemixer-popup"] floating enable, position center
 
@@ -111,7 +114,7 @@ mode "web shortcuts" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $MOD+o mode "web shortcuts"
+bindsym $MOD+shift+w mode "web shortcuts"
 
 # WORKSPACES
 set $ws1 "1"

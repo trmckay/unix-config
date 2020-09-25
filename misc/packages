@@ -28,7 +28,7 @@ fd
 figlet
 firefox
 flex
-fzf
+fzf-open
 gcc8
 geckodriver
 gimp
@@ -63,6 +63,7 @@ mpd
 mpv
 msmtp
 mupdf
+namcap
 nano
 ncdu
 ncmpc

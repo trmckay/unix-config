@@ -81,3 +81,4 @@ alias rn='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; c
 alias db='dropbox-cli'
 alias dropbox='dropbox-cli'
 alias zt="zathura"
+alias v="nvim"
