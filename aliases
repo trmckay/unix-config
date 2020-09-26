@@ -82,3 +82,4 @@ alias db='dropbox-cli'
 alias dropbox='dropbox-cli'
 alias zt="zathura"
 alias v="nvim"
+alias netrst="sudo systemctl restart NetworkManager network-online.target openvpn-client@surfshark-la-udp.service"
