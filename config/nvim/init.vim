@@ -43,7 +43,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'lervag/vimtex'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
@@ -54,6 +53,7 @@ Plug 'xarthurx/taskwarrior.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-fugitive'
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
 highlight clear SignColumn
@@ -137,10 +137,10 @@ nmap <leader>rn <Plug>(coc-rename)
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']
 
-" CHADtree
-nnoremap <leader>e <cmd>CHADopen<cr>
+" coc-explorer
+nnoremap <leader>e <cmd>CocCommand explorer<cr>
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CHADopen
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CocCommand explorer
 
 " Fuzzy finder
 nnoremap <leader>s <cmd>FZF<cr>
@@ -168,3 +168,6 @@ let g:vimtex_fold_manual = 1
 let g:vimtex_compiler_progname = 'latexmk'
 let g:vimtex_view_method = 'zathura'
 nnoremap <leader>p <cmd>VimtexCompile<cr>
+
+" minimap
+nnoremap <leader>m <cmd>MinimapToggle<cr>

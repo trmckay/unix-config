@@ -12,27 +12,29 @@ floating_modifier $MOD
 popup_during_fullscreen leave_fullscreen
 
 # STYLE
-gaps inner 10
-gaps outer 5
+gaps inner 15
+gaps outer 00
+smart_gaps on
 
 default_border pixel
 new_float none
+smart_borders no_gaps
 
 font Meslo LG S
 font pango: Meslo LG S 10
 
-set $COLOR_1  #66a590
-set $COLOR_2  #88fc8c
-set $COLOR_FG #66a590
-set $COLOR_BG #101010
+set $BLUE  #66a590
+set $GREEN  #88fc8c
+set $WHITE #66a590
+set $BLACK #101010
 
 # class                 border    backgr.   text      indicator child_border
-client.focused          $COLOR_1  $COLOR_1  $COLOR_FG $COLOR_FG $COLOR_1
-client.focused_inactive $COLOR_BG $COLOR_BG $COLOR_FG $COLOR_FG $COLOR_BG
-client.unfocused        $COLOR_BG $COLOR_BG $COLOR_FG $COLOR_FG $COLOR_BG
-client.urgent           $COLOR_2  $COLOR_2  $COLOR_FG $COLOR_FG $COLOR_2
+client.focused          $BLUE     $BLUE     $WHITE    $GREEN    $BLUE
+client.focused_inactive $BLACK    $BLACK    $WHITE    $GREEN    $BLUE
+client.unfocused        $BLACK    $BLACK    $WHITE    $BLACK    $BLACK
+client.urgent           $GREEN    $COLOR_2  $WHITE    $GREEN    $BLUE
 
-client.background       $COLOR_BG
+client.background       $BLACK
 
 # FLOATING
 for_window [window_role="pop-up"] floating enable

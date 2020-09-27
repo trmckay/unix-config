@@ -16,6 +16,7 @@ bluez-utils
 bspwm
 calibre
 ccls
+code-minimap
 cpupower
 cronie
 dhcpcd
@@ -70,7 +71,6 @@ ncmpc
 ncurses5-compat-libs
 neofetch
 neomutt
-neovim
 nethogs
 nnn
 nvidia-dkms
