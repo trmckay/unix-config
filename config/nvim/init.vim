@@ -137,6 +137,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']
 
+" markdown preview
+autocmd bufwritepost *.md Pandoc pdf
+
 " coc-explorer
 nnoremap <leader>e <cmd>CocCommand explorer<cr>
 autocmd StdinReadPre * let s:std_in=1

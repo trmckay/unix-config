@@ -212,30 +212,7 @@ bindsym $MOD+Shift+7 move container to workspace number $ws7
 bindsym $MOD+Shift+8 move container to workspace number $ws8
 bindsym $MOD+Shift+9 move container to workspace number $ws9
 
-mode "secondary" {
-        bindsym 1 workspace $wsa, mode default
-        bindsym 2 workspace $wsb, mode default
-        bindsym 3 workspace $wsc, mode default
-        bindsym 4 workspace $wsa, mode default
-
-        bindsym Shift+1 move container to workspace $wsa
-        bindsym Shift+2 move container to workspace $wsb
-        bindsym Shift+3 move container to workspace $wsc
-        bindsym Shift+4 move container to workspace $wsd
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $MOD+r mode "default"
-}
-bindsym $MOD+Tab mode "secondary"
-
 # MACHINE SPECIFIC
-
-exec --no-startup-id nitrogen --restore                         # wallpaper
-exec --no-startup-id $HOME/.config/polybar/launch.sh            # status bar
-exec --no-startup-id picom -b -c                                # compositor
-exec --no-startup-id dunst                                      # notifications
-exec --no-startup-id xautolock -time 15 -locker "i3exit lock"   # locker
 
 set $wsa "a"
 set $wsb "b"
@@ -246,3 +223,14 @@ workspace $wsa output $SECONDARY
 workspace $wsb output $SECONDARY
 workspace $wsc output $SECONDARY
 workspace $wsd output $SECONDARY
+
+bindsym $mod+Tab workspace $wsa
+bindsym $mod+shift+Tab move container to workspace $wsa
+
+# startup
+exec --no-startup-id nitrogen --restore                                # wallpaper
+exec_always --no-startup-id home/trevor/.config/polybar/launch.sh      # status bar
+exec --no-startup-id picom -b -c                                       # compositor
+exec --no-startup-id dunst                                             # notifications
+exec --no-startup-id xautolock -time 15 -locker "i3exit lock"          # locker
+exec /home/trevor/.i3/load_layout.sh                                   # initial layout
