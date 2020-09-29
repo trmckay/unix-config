@@ -229,7 +229,7 @@ bindsym $mod+shift+Tab move container to workspace $wsa
 
 # startup
 exec --no-startup-id nitrogen --restore                                # wallpaper
-exec_always --no-startup-id home/trevor/.config/polybar/launch.sh      # status bar
+exec_always --no-startup-id /home/trevor/.config/polybar/launch.sh      # status bar
 exec --no-startup-id picom -b -c                                       # compositor
 exec --no-startup-id dunst                                             # notifications
 exec --no-startup-id xautolock -time 15 -locker "i3exit lock"          # locker
