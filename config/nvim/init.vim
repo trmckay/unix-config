@@ -50,8 +50,6 @@ Plug 'sainnhe/forest-night'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'xarthurx/taskwarrior.vim'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'wfxr/minimap.vim'
 call plug#end()
@@ -102,11 +100,6 @@ tnoremap <Esc> <C-\><C-n>
 " Remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
 
-" pandoc
-noremap <buffer> <leader>pd :Pandoc! pdf<cr><cr>
-let g:pandoc#modules#disabled = ["folding","formatting"]
-let g:pandoc#syntax#conceal#use = 0
-
 "coc-nvim"
 " trigger with tab
 inoremap <silent><expr> <TAB>
@@ -136,9 +129,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']
-
-" markdown preview
-autocmd bufwritepost *.md Pandoc pdf
 
 " coc-explorer
 nnoremap <leader>e <cmd>CocCommand explorer<cr>

@@ -44,6 +44,12 @@ function peek() {
         less $1
     fi
 }
+function waitfor {
+    while [ "$(pgrep $1)" ]; do
+        sleep 5;
+    done
+}
+
 alias edit-aliases="nvim ~/.aliases; refresh"
 alias edit-path="nvim ~/.path; refresh"
 alias vi="nvim"
