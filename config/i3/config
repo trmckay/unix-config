@@ -5,10 +5,12 @@ set $SHELL      zsh
 
 set $PRIMARY    HDMI-0
 set $SECONDARY  DP-3
-set $MOD        Mod4
+set $TOP_LEFT   1095 190
 
-# GENERAL
+set $MOD        Mod4
+set $L_ALT      Mod1
 floating_modifier $MOD
+
 popup_during_fullscreen leave_fullscreen
 
 # STYLE
@@ -30,7 +32,7 @@ set $BLACK #101010
 
 # class                 border    backgr.   text      indicator child_border
 client.focused          $BLUE     $BLUE     $WHITE    $GREEN    $BLUE
-client.focused_inactive $BLACK    $BLACK    $WHITE    $GREEN    $BLUE
+client.focused_inactive $BLACK    $BLACK    $WHITE    $BLACK    $BLACK
 client.unfocused        $BLACK    $BLACK    $WHITE    $BLACK    $BLACK
 client.urgent           $GREEN    $COLOR_2  $WHITE    $GREEN    $BLUE
 
@@ -64,10 +66,12 @@ bindsym $MOD+o exec --no-startup-id "fzf-open"
 for_window [title="fzf-open-run"] floating enable, position center
 
 bindsym $MOD+p exec --no-startup-id "$TERMINAL --title pulsemixer-popup -e pulsemixer"
-for_window [title="pulsemixer-popup"] floating enable, position center
+for_window [title="pulsemixer-popup"] floating enable, resize set 0 300, move position center
 
 bindsym $MOD+n exec --no-startup-id "$TERMINAL --title nmtui-popup -e nmtui"
 for_window [title="nmtui-popup"] floating enable, position center
+
+bindsym $MOD+a exec --no-startup-id bwmenu
 
 bindsym $MOD+t exec --no-startup-id "$TERMINAL --title task-popup -e todo"
 for_window [title="task-popup"] floating enable, position center
@@ -76,7 +80,7 @@ bindsym $MOD+shift+t exec --no-startup-id "$TERMINAL --title task-popup -e vit"
 for_window [title="task-popup"] floating enable, position center
 
 bindsym $MOD+e exec --no-startup-id "$TERMINAL --title ranger-popup -e ranger"
-for_window [title="ranger-popup"] floating enable, position 0 0
+for_window [title="ranger-popup"] floating enable, resize set 1200 800, move position $TOP_LEFT
 
 bindsym $MOD+u exec --no-startup-id "$TERMINAL --title htop-popup -e htop"
 for_window [title="htop-popup"] fullscreen
@@ -85,6 +89,7 @@ bindsym $MOD+c exec --no-startup-id "gscreenshot"
 for_window [title="gscreenshot"] floating enable, position center
 
 bindsym $MOD+x exec "$HOME/dotfiles/i3/quickterm/i3-quickterm shell"
+for_window [title="shell - i3-quickterm"] border none
 
 bindsym $MOD+space exec "rofi -show drun"
 
@@ -143,8 +148,7 @@ workspace $ws9 output $PRIMARY
 # SHORTCUTS
 bindsym $MOD+q kill
 
-bindsym $MOD+Shift+v split h
-bindsym $MOD+v split v
+bindsym $MOD+v split toggle
 
 bindsym $MOD+shift+h move left
 bindsym $MOD+shift+j move down
@@ -156,10 +160,10 @@ bindsym $MOD+j focus down
 bindsym $MOD+k focus up
 bindsym $MOD+l focus right
 
-bindsym $MOD+Mod1+j resize shrink height 10 px or 10 ppt
-bindsym $MOD+Mod1+k resize grow   height 10 px or 10 ppt
-bindsym $MOD+Mod1+h resize shrink width  10 px or 10 ppt
-bindsym $MOD+Mod1+l resize grow   width  10 px or 10 ppt
+bindsym $L_ALT+j resize shrink height 10 px or 10 ppt
+bindsym $L_ALT+k resize grow   height 10 px or 10 ppt
+bindsym $L_ALT+h resize shrink width  10 px or 10 ppt
+bindsym $L_ALT+l resize grow   width  10 px or 10 ppt
 
 bindsym $MOD+f fullscreen toggle
 

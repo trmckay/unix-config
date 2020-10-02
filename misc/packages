@@ -12,6 +12,8 @@ base
 bash-language-server
 bear
 bison
+bitwarden
+bitwarden-rofi-git
 bluez-utils
 bspwm
 calibre
@@ -94,7 +96,6 @@ pulseaudio-jack
 pulsemixer
 pywal-git
 ranger
-rofi
 rsync
 rtl88x2bu-dkms-git
 rust
@@ -128,6 +129,7 @@ valgrind
 virt-manager
 vit
 vlc
+vscodium-git
 wget
 wimlib
 xautolock

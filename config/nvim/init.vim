@@ -26,10 +26,6 @@ set shortmess+=c
 set signcolumn=yes
 syntax on
 
-autocmd BufRead,BufNewFile * setlocal nospell
-autocmd BufRead,BufNewFile *.* setlocal nospell
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.tex setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
@@ -52,6 +48,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'xarthurx/taskwarrior.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'wfxr/minimap.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 highlight clear SignColumn
@@ -71,6 +70,10 @@ au BufRead /tmp/mutt-* set tw=72
 " colorscheme forest-night
 "
 autocmd BufRead,BufNewFile *.cir setlocal filetype=cir
+
+nnoremap <leader>po <cmd>!pandoc % -o `echo % \| sed 's/\.md/\.pdf/'`; zathura `echo % \| sed 's/\.md/\.pdf/'` &<cr>
+autocmd bufwritepost *.md AsyncRun pandoc "%" -o `echo "%" | sed 's/\.md/\.pdf/'`
+autocmd bufleave *.md <cmd>!rm preview.pdf<cr>
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -126,6 +129,10 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 " rename current work
 nmap <leader>rn <Plug>(coc-rename)
+
+" markdown
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
 
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F']

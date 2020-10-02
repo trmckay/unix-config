@@ -25,3 +25,5 @@ if [[ "$TERM" == "linux" ]]; then
         *) neofetch;;
     esac
 fi
+
+source $HOME/.bitwarden_session
