@@ -71,6 +71,9 @@ au BufRead /tmp/mutt-* set tw=72
 "
 autocmd BufRead,BufNewFile *.cir setlocal filetype=cir
 
+nnoremap <leader>cy <cmd>CocEnable<cr>
+nnoremap <leader>cn <cmd>CocDisable<cr>
+
 nnoremap <leader>po <cmd>!pandoc % -o `echo % \| sed 's/\.md/\.pdf/'`; zathura `echo % \| sed 's/\.md/\.pdf/'` &<cr>
 autocmd bufwritepost *.md AsyncRun pandoc "%" -o `echo "%" | sed 's/\.md/\.pdf/'`
 autocmd bufleave *.md <cmd>!rm preview.pdf<cr>

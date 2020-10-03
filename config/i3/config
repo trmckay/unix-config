@@ -26,7 +26,7 @@ font Meslo LG S
 font pango: Meslo LG S 10
 
 set $BLUE  #66a590
-set $GREEN  #88fc8c
+set $GREEN #88fc8c
 set $WHITE #66a590
 set $BLACK #101010
 
@@ -54,10 +54,9 @@ for_window [title="mpv-theater-view"] move to workspace $wsa, fullscreen
 
 # APP SHORTCUTS
 bindsym $MOD+w exec $WEBBROWSER
-
 bindsym $MOD+i exec thunderbird
-
 bindsym $MOD+s exec spotify
+bindsym $MOD+v exec vscodium
 
 bindsym $MOD+Return exec "$TERMINAL"
 bindsym $MOD+shift+Return exec "$TERMINAL -e tmux"
@@ -148,7 +147,7 @@ workspace $ws9 output $PRIMARY
 # SHORTCUTS
 bindsym $MOD+q kill
 
-bindsym $MOD+v split toggle
+bindsym $MOD+shift+v split toggle
 
 bindsym $MOD+shift+h move left
 bindsym $MOD+shift+j move down
@@ -232,9 +231,5 @@ bindsym $mod+Tab workspace $wsa
 bindsym $mod+shift+Tab move container to workspace $wsa
 
 # startup
-exec --no-startup-id nitrogen --restore                                # wallpaper
-exec_always --no-startup-id /home/trevor/.config/polybar/launch.sh      # status bar
-exec --no-startup-id picom -b -c                                       # compositor
-exec --no-startup-id dunst                                             # notifications
-exec --no-startup-id xautolock -time 15 -locker "i3exit lock"          # locker
-exec /home/trevor/.i3/load_layout.sh                                   # initial layout
+exec /home/trevor/.i3/load_layout.sh
+exec_always --no-startup-id "/home/trevor/.config/polybar/launch.sh i3"
